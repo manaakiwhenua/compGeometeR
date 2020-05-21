@@ -19,9 +19,9 @@
 #'   \item \code{hull_simplices}: a \eqn{s}-by-\eqn{d} matrix of point indices 
 #'   that define the \eqn{s} \href{https://en.wikipedia.org/wiki/Simplex}{simplices} 
 #'   that make up the convex layer.
-#'   \item \code{hull_indicies}: a vector of the point indicies that form the 
+#'   \item \code{hull_indices}: a vector of the point indices that form the 
 #'   convex layer.
-#'   \item \code{hull_verticies}: a matrix of point coordinates that form the 
+#'   \item \code{hull_vertices}: a matrix of point coordinates that form the 
 #'   convex layer.
 #' }
 #'

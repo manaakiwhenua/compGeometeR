@@ -1,18 +1,18 @@
 #' @title Find simplex
 #' 
-#' @description Returns the simplicies of a Delaunay triangulation or alpha 
+#' @description Returns the simplices of a Delaunay triangulation or alpha 
 #' complex that contain the given set of test points.
 #' 
-#' @param simplicies A Delaunay trigulation list object created by 
+#' @param simplices A Delaunay trigulation list object created by 
 #' \code{\link{delaunay}} or a alpha complex list object created by 
-#' \code{\link{alpha_complex}} that contain simplicies.
+#' \code{\link{alpha_complex}} that contain simplices.
 #' @param test_points a \eqn{n}-by-\eqn{d} dataframe or matrix. The rows
 #'   represent \eqn{n} points and the \eqn{d} columns the coordinates in 
 #'   \eqn{d}-dimensional space. 
 #' 
 #' @return A \eqn{n} length vector containing the index of the simplex the test 
 #' point is within, or a value of NA if a test point is not within any of the 
-#' simplicies.
+#' simplices.
 #' 
 #' @examples 
 #' # Define points and create a Delaunay triangulation
@@ -22,7 +22,7 @@
 #' a_complex <- alpha_complex(points = p, alpha = 20)
 #' # Check which simplex the test points belong to
 #' p_test <- data.frame(c(20, 50, 60, 40), c(20, 60, 60, 50))
-#' p_test_simplex <- find_simplex(simplicies = a_complex, test_points = p_test)
+#' p_test_simplex <- find_simplex(simplices = a_complex, test_points = p_test)
 #' plot(p, pch = as.character(seq(nrow(p))), xlim=c(0,90))
 #' for (s in seq(nrow(a_complex$simplices))) {
 #'   polygon(a_complex$input_points[a_complex$simplices[s,],], border="red")
@@ -31,12 +31,12 @@
 #'        labels=s, col="red")
 #' }
 #' points(p_test[,1], p_test[,2], pch=c("1", "2", "3", "4"), col="blue")
-#' legend("topright", legend = c("input points", "simplicies", "test points"), 
-#'        text.col=c("black", "red", "blue"), title = "Indicies for:", bty="n")
+#' legend("topright", legend = c("input points", "simplices", "test points"), 
+#'        text.col=c("black", "red", "blue"), title = "Indices for:", bty="n")
 #' print(p_test_simplex)
 #'
 #' @export
-find_simplex <- function(simplicies, test_points) {
+find_simplex <- function(simplices, test_points) {
   
   # Coerce the input to be matrix
   if(is.null(test_points)){
@@ -49,9 +49,9 @@ find_simplex <- function(simplicies, test_points) {
     test_points <- as.matrix(test_points)
   }
 
-  # Identify the simplicies that test point belongs 
+  # Identify the simplices that test point belongs 
   # First check if the point lies in the convex hull
-  hull <- convex_hull(points = simplicies$input_points)
+  hull <- convex_hull(points = simplices$input_points)
   inHull <- in_convex_hull(hull, test_points)
   
   # Create an empty object to hold which simplex the test points are in
@@ -61,12 +61,12 @@ find_simplex <- function(simplicies, test_points) {
   for (p in c(1:nrow(test_points))) {
     if (inHull[p] == TRUE) {
       
-      # Loop over the simplicies
-      for(s in c(1:nrow(simplicies$simplices))) {
+      # Loop over the simplices
+      for(s in c(1:nrow(simplices$simplices))) {
         
         # Get the coordinates of the points that make the simplex
-        simplex_indicies <- simplicies$simplices[s, ]
-        simplex_coordinates <- simplicies$input_points[simplex_indicies, ]
+        simplex_indices <- simplices$simplices[s, ]
+        simplex_coordinates <- simplices$input_points[simplex_indices, ]
 
         # Get the barycentric coordinate of the test point for the simplex
         tp = rbind(c(test_points[p,]))
