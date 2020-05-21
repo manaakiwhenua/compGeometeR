@@ -26,8 +26,8 @@
 #' p <- data.frame(x, y)
 #' ch <- convex_hull(points = p)
 #' plot(p, pch = as.character(seq(nrow(p))), xlim=c(0,100), ylim=c(0,100))
-#' for (e in seq(nrow(ch$hull_edges))) {
-#'   lines(ch$input_points[ch$hull_edges[e, ], ], col = "red")
+#' for (s in seq(nrow(ch$hull_simplices))) {
+#'   lines(ch$input_points[ch$hull_simplices[s, ], ], col = "red")
 #' }
 #' # Check if some test points are in the convex hull
 #' p_test <- data.frame(c(20, 50, 60, 90), c(20, 60, 60, 40))

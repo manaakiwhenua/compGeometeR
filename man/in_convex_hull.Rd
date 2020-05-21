@@ -30,14 +30,14 @@ y <- c(35, 80, 70, 50, 60, 20)
 p <- data.frame(x, y)
 ch <- convex_hull(points = p)
 plot(p, pch = as.character(seq(nrow(p))), xlim=c(0,100), ylim=c(0,100))
-for (e in seq(nrow(ch$hull_edges))) {
-  lines(ch$input_points[ch$hull_edges[e, ], ], col = "red")
+for (s in seq(nrow(ch$hull_simplices))) {
+  lines(ch$input_points[ch$hull_simplices[s, ], ], col = "red")
 }
 # Check if some test points are in the convex hull
 p_test <- data.frame(c(20, 50, 60, 90), c(20, 60, 60, 40))
 points(p_test[,1], p_test[,2], pch=c("1", "2", "3", "4"), col="blue")
 legend("topright", legend = c("input points", "test points"), 
-       text.col=c("black", "blue"), title = "Indicies for:", bty="n")
+       text.col=c("black", "blue"), title = "Indices for:", bty="n")
 p_test_hull <- in_convex_hull(hull = ch, test_points = p_test)
 print(p_test_hull)
 

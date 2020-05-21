@@ -4,12 +4,12 @@
 \alias{find_simplex}
 \title{Find simplex}
 \usage{
-find_simplex(simplicies, test_points)
+find_simplex(simplices, test_points)
 }
 \arguments{
-\item{simplicies}{A Delaunay trigulation list object created by 
+\item{simplices}{A Delaunay trigulation list object created by 
 \code{\link{delaunay}} or a alpha complex list object created by 
-\code{\link{alpha_complex}} that contain simplicies.}
+\code{\link{alpha_complex}} that contain simplices.}
 
 \item{test_points}{a \eqn{n}-by-\eqn{d} dataframe or matrix. The rows
 represent \eqn{n} points and the \eqn{d} columns the coordinates in 
@@ -18,10 +18,10 @@ represent \eqn{n} points and the \eqn{d} columns the coordinates in
 \value{
 A \eqn{n} length vector containing the index of the simplex the test 
 point is within, or a value of NA if a test point is not within any of the 
-simplicies.
+simplices.
 }
 \description{
-Returns the simplicies of a Delaunay triangulation or alpha 
+Returns the simplices of a Delaunay triangulation or alpha 
 complex that contain the given set of test points.
 }
 \examples{
@@ -32,7 +32,7 @@ p <- data.frame(x, y)
 a_complex <- alpha_complex(points = p, alpha = 20)
 # Check which simplex the test points belong to
 p_test <- data.frame(c(20, 50, 60, 40), c(20, 60, 60, 50))
-p_test_simplex <- find_simplex(simplicies = a_complex, test_points = p_test)
+p_test_simplex <- find_simplex(simplices = a_complex, test_points = p_test)
 plot(p, pch = as.character(seq(nrow(p))), xlim=c(0,90))
 for (s in seq(nrow(a_complex$simplices))) {
   polygon(a_complex$input_points[a_complex$simplices[s,],], border="red")
@@ -41,8 +41,8 @@ for (s in seq(nrow(a_complex$simplices))) {
        labels=s, col="red")
 }
 points(p_test[,1], p_test[,2], pch=c("1", "2", "3", "4"), col="blue")
-legend("topright", legend = c("input points", "simplicies", "test points"), 
-       text.col=c("black", "red", "blue"), title = "Indicies for:", bty="n")
+legend("topright", legend = c("input points", "simplices", "test points"), 
+       text.col=c("black", "red", "blue"), title = "Indices for:", bty="n")
 print(p_test_simplex)
 
 }
