@@ -76,7 +76,7 @@
     options <- paste(options, collapse=" ")
     
     # Call C function to create the Delaunay triangulation
-    dt <- .Call("C_delaunayn", points, options, tmpdir, PACKAGE="alphashape")
+    dt <- .Call("C_delaunayn", points, options, tmpdir, PACKAGE="compGeometeR")
     # Re-index from C numbering to R numbering
     dt$tri[is.na(dt$tri)] <- 0
     tri <- dt$tri + 1

@@ -71,7 +71,7 @@
   	options <- "Qt"
 	
     # Call C function to create the convex hull
-  	ch <- .Call("C_convex", points, options, tmpdir, PACKAGE="alphashape")
+  	ch <- .Call("C_convex", points, options, tmpdir, PACKAGE="compGeometeR")
   	# Re-index from C numbering to R numbering
   	ch$convex_hull[is.na(ch$convex_hull)] <- 0
   	simplices <- as.data.frame(ch$convex_hull + 1)
