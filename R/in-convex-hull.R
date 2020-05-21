@@ -59,10 +59,10 @@
   	}
   	# Make sure we have real-valued input
   	storage.mode(test_points) <- "double"
-  	# We need to check for NAs in the input, as these will crash the C code.
-  	if (any(is.na(test_points))) {
-  		stop("test_points should not contain any NAs")
-  	}
+  	# # We need to check for NAs in the input, as these will crash the C code.
+  	# if (any(is.na(test_points))) {
+  	# 	stop("test_points should not contain any NAs")
+  	# }
   	
   	# Check convex hull
   	if(is.null(hull)){
