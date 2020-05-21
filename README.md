@@ -44,7 +44,7 @@ To start local development please branch out from the current stable master bran
 
 After making changes,  build and install to your R library by running the following command in the package root directory:
 
-+ make install
++ make install (this should be run outside the project directory)
 +  R CMD Rd2pdf --title='compGeometeR' -o /d/Projects/SDMRPackages/compGeometeR_doc.pdf package/man/*.Rd (to regenerate the pdf file)
 devtools::install(args = c("--no-multiarch"))
 
@@ -71,7 +71,7 @@ You will need to install these 2 R package:
 
 Please change to your bitbucket username
 
-devtools::install_git("https://bitbucket.org/landcareresearch/qhull-nalphashape-package/src/master/", subdir ="package",credentials = git2r::cred_user_pass("omondiagbep@landcareresearch.co.nz", getPass::getPass()))
+devtools::install_git("https://github.com/manaakiwhenua/compGeometeR", subdir ="package",credentials = git2r::cred_user_pass("omondiagbep@landcareresearch.co.nz", getPass::getPass()))
     
     
     

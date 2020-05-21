@@ -88,7 +88,7 @@ find_simplex <- function(simplices, test_points) {
     }
   }
   return (test_points_simplex)
-  #return(.Call("C_findSimplex", hull$convexhull, test_points, PACKAGE="alphashape"))
+  #return(.Call("C_findSimplex", hull$convexhull, test_points, PACKAGE="compGeometeR"))
 }
 
 # Internal function used by \code{\link{find_simplex}} to calculate the 

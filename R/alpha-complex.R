@@ -87,7 +87,7 @@ alpha_complex <- function(points=NULL, alpha=Inf) {
     options <- paste(options, collapse=" ")  
 
 	  # Call C function to create the Voronoi diagram
-  	vd <- .Call("C_voronoiR", points, options, tmpdir, PACKAGE="alphashape")
+  	vd <- .Call("C_voronoiR", points, options, tmpdir, PACKAGE="compGeometeR")
     # Re-index from C numbering to R numbering
     vd$tri[is.na(vd$tri)] <- 0
     tri <- vd$tri + 1

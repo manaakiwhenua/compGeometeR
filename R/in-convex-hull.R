@@ -80,9 +80,9 @@
     options <- "Qt"
     
     # Call C function to create the convex hull
-    convex <- .Call("C_convex", points, options, tmpdir, PACKAGE="alphashape")
+    convex <- .Call("C_convex", points, options, tmpdir, PACKAGE="compGeometeR")
     
     # Call C function to check if points are inside the convex hull
-    return(.Call("C_inconvexhull", convex$convex_hull, test_points, PACKAGE="alphashape"))
+    return(.Call("C_inconvexhull", convex$convex_hull, test_points, PACKAGE="compGeometeR"))
     
   }
