@@ -1,3 +1,5 @@
+[![manaakiwhenua-standards](https://github.com/manaakiwhenua/compGeometeR/workflows/manaakiwhenua-standards/badge.svg)](https://github.com/manaakiwhenua/manaakiwhenua-standards)
+
 # compGeometeR  R package 
 
 ### Implementation of Computational Geometry Algorithms for use in R
