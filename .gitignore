@@ -1,0 +1,14 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.cproject
+.Rbuildignore
+.project
+Debug/
+package/src-i386
+.settings
+*.dll
+*.o
+*.bak
+
