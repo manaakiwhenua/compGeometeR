@@ -83,7 +83,7 @@ devtools::install_git("https://github.com/manaakiwhenua/compGeometeR")
 
 This software was developed using `R` and `C` Language. If you fork this project and want to extend the current functionality, you can do that by extending the`R`code or `C` code or both. To get started you need the following software:
 
-### Programming
+### Software
 1. Download [perl](https://www.activestate.com/products/activeperl/downloads/)
 
 
