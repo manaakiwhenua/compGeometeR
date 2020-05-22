@@ -69,7 +69,7 @@ library(compGeometeR)
 
 
 
-## Installating directly from this repository
+## Github Installation
 
 ```r
 # Install devtools from CRAN
