@@ -22,7 +22,7 @@ CompGeometeR aims to expose the implementation of various computation geometry a
 
 
 
-## Learning more
+## Learning More
 
 To learn more about computational geometry library/algorithms and R package development, visit the following:
 
@@ -115,18 +115,18 @@ There are two ways to build and install the package. This is done by using the m
 The `make` file is the easier way to rebuild and install the package, this is because it creates the documentation, builds, and installs the package using one command. To do this, please run the following command in the package root directory: 
 
 
-1.  make install (this should be run outside the project directory)
+ * make install (this should be run outside the project directory)
 
-To build and install using the R devtools, you have to make sure you `make` install on your system. Once you have follow the instruction given above to install `make`, then runn the following.
+To build and install using the R devtools, you have to make sure you `make` install on your system. Once you have follow the instruction given above to install `make`, then run the following.
 
-1.  roxygen2::roxygenise()  (to regenrate the documentation)
-1.  devtools::build()  (to build)
-2.  devtools::install or devtools::install(args = c("--no-multiarch"))  (to install depending on your architecture)
+ * roxygen2::roxygenise()  (to regenrate the documentation)
+ * devtools::build()  (to build)
+ * devtools::install or devtools::install(args = c("--no-multiarch"))  (to install depending on your architecture)
 
 ### Generating Package PDF
 
 To re-generate the package pdf, please run the following
-1. R CMD Rd2pdf --title='compGeometeR' -o /path-to-your-project-folder/man/*.Rd 
+ * R CMD Rd2pdf --title='compGeometeR' -o /path-to-your-project-folder/man/*.Rd 
 
 
 
