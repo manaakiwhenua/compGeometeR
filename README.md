@@ -4,7 +4,7 @@
 
 # compGeometeR
 
-CompGeometeR aims to expose the implementation of various computation geometry algorithms in R. We believed by exposing these algorithms, the R user could easily apply these algorithms in solving problems in different domains. For a start we have exposed some computation geometry implemented in the [Qhul library](http://www.qhull.org/) and implement additional algorithms using the output derived from the Qhull implemented algorithms. The following algorithm are available for use:
+CompGeometeR aims to expose the implementation of various computation geometry algorithms in R. We believed by exposing these algorithms, the R user could easily apply these algorithms in solving problems in different domains. For a start we have exposed some computation geometry implemented in the [Qhull library](http://www.qhull.org/) and implement additional algorithms using the output derived from the Qhull implemented algorithms. The following algorithm are available for use:
 
 * Delunay: Computes the [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) by computing a [convex hull](https://en.wikipedia.org/wiki/Convex_hull)
 
