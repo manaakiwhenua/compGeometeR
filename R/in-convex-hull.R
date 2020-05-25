@@ -11,7 +11,8 @@
 #'   \eqn{d}-dimensional space.
 #' 
 #' @return A \eqn{n} length vector containing \code{TRUE} if test point \eqn{n} 
-#' lies within the hull and \code{FALSE} if it lies outside the hull.
+#' lies within the hull and \code{FALSE} if it lies outside the hull.  If any of 
+#' the test point coordinates contain NA then the output is also NA.
 #' 
 #' @seealso \code{\link{convex_hull}}
 #' 
