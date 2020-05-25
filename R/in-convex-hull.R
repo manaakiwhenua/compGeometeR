@@ -79,6 +79,11 @@
     convex <- .Call("C_convex", points, options, tmpdir, PACKAGE="compGeometeR")
     
     # Call C function to check if points are inside the convex hull
-    return(.Call("C_inconvexhull", convex$convex_hull, test_points, PACKAGE="compGeometeR"))
+    in_hull <- .Call("C_inconvexhull", convex$convex_hull, test_points, PACKAGE="compGeometeR")
+    
+    # Replace any test point coordinates containing NAs with NA
+    in_hull[!complete.cases(test_points)] = NA
+    
+    return(in_hull)
     
   }
