@@ -12,7 +12,8 @@
 #' 
 #' @return A \eqn{n} length vector containing the index of the simplex the test 
 #' point is within, or a value of NA if a test point is not within any of the 
-#' simplices.
+#' simplices.  If any of the test point coordinates contain NA then the output 
+#' is also NA.
 #' 
 #' @examples 
 #' # Define points and create a Delaunay triangulation
