@@ -59,30 +59,32 @@ find_simplex <- function(simplices, test_points) {
   
   # For each test point that is within the convex hull
   for (p in c(1:nrow(test_points))) {
-    if (inHull[p] == TRUE) {
-      
-      # Loop over the simplices
-      for(s in c(1:nrow(simplices$simplices))) {
-        
-        # Get the coordinates of the points that make the simplex
-        simplex_indices <- simplices$simplices[s, ]
-        simplex_coordinates <- simplices$input_points[simplex_indices, ]
-
-        # Get the barycentric coordinate of the test point for the simplex
-        tp = rbind(c(test_points[p,]))
-        test_barycentric <- barycentric_coordinate(simplex_coordinates, tp)
-        
-        # The point is inside the triangle all of the barycentric coordinates 
-        # are positive
-        check_sign <- sign(test_barycentric[1, ])
-        if (length(which(check_sign == -1)) == 0) {
-          test_points_simplex[p] <- s
-          break    # the test point is inside this simplex so stop searching
-        } else {
-          test_points_simplex[p] = NA # test point is not in a simplex
+    if (!is.na(inHull[p])) { # If it is not an NA
+      if (inHull[p] == TRUE) { # If it is in the convex hull
+        # Loop over the simplices
+        for(s in c(1:nrow(simplices$simplices))) {
+          
+          # Get the coordinates of the points that make the simplex
+          simplex_indices <- simplices$simplices[s, ]
+          simplex_coordinates <- simplices$input_points[simplex_indices, ]
+  
+          # Get the barycentric coordinate of the test point for the simplex
+          tp = rbind(c(test_points[p,]))
+          test_barycentric <- barycentric_coordinate(simplex_coordinates, tp)
+          
+          # The point is inside the triangle all of the barycentric coordinates 
+          # are positive
+          check_sign <- sign(test_barycentric[1, ])
+          if (length(which(check_sign == -1)) == 0) {
+            test_points_simplex[p] <- s
+            break    # the test point is inside this simplex so stop searching
+          } else {
+            test_points_simplex[p] = NA # test point is not in a simplex
+          }
         }
+      } else {
+        test_points_simplex[p] = NA # test point is not in a simplex
       }
-      
     } else {
       test_points_simplex[p] = NA # test point is not in a simplex
     }
