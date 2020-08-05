@@ -70,13 +70,13 @@ double * calculateradill(double *point0,double *voronoiVertices)
 	unsigned row = nrows(point0);
 	unsigned colD= ncols(point0);
 	double *circumRadii= (double *) R_alloc(row, sizeof(double));
-
+	Rprintf("num of row");
+	Rprintf(row);
 	for(j=0; j < row; j++)
 	{
 		 double pointSumDiff =0.0;
 		 //get the point value using the trigulation index
-		 pointSumDiff += (double)pow((REAL(voronoiVertices)[j] - REAL(point0)[j]),2);
-
+	
 		 for(int i=1; i<colD;i++)
 		 {
 			 pointSumDiff += (double)pow((REAL(voronoiVertices)[j + row*i] - REAL(point0)[j + row*i]),2);

@@ -108,10 +108,10 @@ voronoi <- function(points=NULL, delaunay=FALSE) {
     tri <- vd$tri + 1
     # Extract voronoi regions relating to an input point and put in point order
     point_regions <- vd$point_regions
-    voronoi_regions <- vd$voronoi_regions
+    #voronoi_regions <- vd$voronoi_regions
     point_regions_data = point_regions[unlist(point_regions != -1)]
-    voronoi_regions_data = voronoi_regions[unlist(point_regions != -1)]
-    voronoi_regions_ordered = voronoi_regions_data[order(point_regions_data)]
+    #voronoi_regions_data = voronoi_regions[unlist(point_regions != -1)]
+    #voronoi_regions_ordered = voronoi_regions_data[order(point_regions_data)]
     # Determine Vonoi neighbours via Delaunay triangulation
     tri_sorted <- t(apply(tri, 1, sort))
     all_edges <- rbind(tri_sorted[,1:2], tri_sorted[,2:3], tri_sorted[,c(1,3)])
@@ -122,15 +122,48 @@ voronoi <- function(points=NULL, delaunay=FALSE) {
     voronoi <- list()
     voronoi$input_points <- points
     voronoi$voronoi_vertices <- vd$voronoi_vertices
-    voronoi$voronoi_regions <- voronoi_regions_ordered    
+    #voronoi$voronoi_regions <- vd$point_regions #voronoi_regions_ordered    
+
 
     # Return Delaunay triangulation information too if wanted
     if (delaunay == TRUE) {
 	    voronoi$simplices <- tri
-	    voronoi$circumradii <- vd$circumRadii
+	   
+	    #circum Radii
+	    voronoi$circumradii = circumRadii(vd$simplex_points, voronoi$voronoi_vertices)
+	    
       for (s in seq(nrow(tri))) {
           voronoi$simplex_neighs[[s]] <- vd$neighbours[[s]][vd$neighbours[[s]] > 0]
       }
 	  }
   	return(voronoi)
-  }
+}
+ 
+#' @param simplex_points a \eqn{n}-by-\eqn{d} point which makes the trigulation as a dataframe. The rows
+#'   represent \eqn{n} points and the \eqn{d} columns the coordinates in 
+#'   \eqn{d}-dimensional space.
+#' @param voronoi_vertices voronoi vertices of the Voronoi Diagram \eqn{n}-by-\eqn{d} as a dataframe
+#' 
+#' @return Returns a matrix of the circumRadii
+circumRadii <- function(simplex_points,voronoi_vertices)
+{
+    row=nrow(simplex_points)
+    colD=ncol(simplex_points)
+    circumRadii=matrix(NA, nrow = row, ncol = 1)
+    k=1
+    for(j in 1:row)
+    {
+        pointSumDiff =0.0;
+       #get the point value using the triangulation index
+       
+       for(i in 1:colD)
+       {
+         pointSumDiff = pointSumDiff + (voronoi_vertices[j ,i] -  simplex_points[j , i]) ^ 2
+       }
+       circumRadii[k] = sqrt(pointSumDiff)
+       k=k+1
+    }
+    return(circumRadii)
+}
+
+
