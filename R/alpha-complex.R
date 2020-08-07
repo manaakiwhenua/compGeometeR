@@ -16,8 +16,8 @@
 #' @return Returns a list consisting of:
 #' 
 #' \itemize{
-#'   \item \code{input_points}: the input points used to create the Voronoi 
-#'   diagram.
+#'   \item \code{input_points}: the input points used to create the alpha 
+#'   complex
 #'   \item \code{simplices}: a \eqn{s}-by-\eqn{d+1} matrix of point indices 
 #'   that define the \eqn{s} \href{https://en.wikipedia.org/wiki/Simplex}{simplices} 
 #'   that make up the alpha complex.
