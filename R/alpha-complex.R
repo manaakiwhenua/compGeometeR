@@ -97,7 +97,7 @@ alpha_complex <- function(points=NULL, alpha=Inf) {
     # Get the first vertex of each simplex
     vertex1 = points[tri[,1],]
     # Calculate the circumradii of circumcircle
-    circumradii <- sqrt(rowSums((simplex1 - vd$voronoi_vertices) ^ 2))    
+    circumradii <- sqrt(rowSums((vertex1 - vd$voronoi_vertices) ^ 2))    
     
     # Create list to return the desired alpha complex information
     alpha_complex <- list()
