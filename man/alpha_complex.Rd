@@ -20,8 +20,8 @@ equivalent to a Delaunay triangulation.}
 Returns a list consisting of:
 
 \itemize{
-  \item \code{input_points}: the input points used to create the Voronoi 
-  diagram.
+  \item \code{input_points}: the input points used to create the alpha 
+  complex
   \item \code{simplices}: a \eqn{s}-by-\eqn{d+1} matrix of point indices 
   that define the \eqn{s} \href{https://en.wikipedia.org/wiki/Simplex}{simplices} 
   that make up the alpha complex.
@@ -51,7 +51,7 @@ for (s in seq(nrow(a_complex$simplices))) {
 }
 text(a_complex$circumcentres, labels=seq(nrow(a_complex$simplices)), col="blue")
 symbols(a_complex$circumcentres, circles = a_complex$circumradii, 
-        inches = FALSE, add = TRUE, fg="blue", lty="dotted")
+        inches = FALSE, add = TRUE, fg="blue")
 
 }
 \references{

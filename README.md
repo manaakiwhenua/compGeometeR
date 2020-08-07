@@ -17,10 +17,6 @@ CompGeometeR aims to expose the implementation of various computation geometry a
 * Find simplex: Compute the simplices of a [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) or [alpha complex](href{https://en.wikipedia.org/wiki/Alpha_shape#Alpha_complex) that contain the given set of test points.
 
 
-* Voronoi: Computes the [voroni diagram](https://en.wikipedia.org/wiki/Voronoi_diagram) for a given set of point using [Qhull library](http://www.qhull.org/)
-
-
-
 
 ## Learning More
 
