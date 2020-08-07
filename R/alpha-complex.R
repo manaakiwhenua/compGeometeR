@@ -49,7 +49,7 @@
 #' }
 #' text(a_complex$circumcentres, labels=seq(nrow(a_complex$simplices)), col="blue")
 #' symbols(a_complex$circumcentres, circles = a_complex$circumradii, 
-#'         inches = FALSE, add = TRUE, fg="blue", lty="dotted")
+#'         inches = FALSE, add = TRUE, fg="blue")
 #' 
 #' @export
 alpha_complex <- function(points=NULL, alpha=Inf) {
@@ -92,18 +92,24 @@ alpha_complex <- function(points=NULL, alpha=Inf) {
     vd$tri[is.na(vd$tri)] <- 0
     tri <- vd$tri + 1
     
+    # Extract the Voronoi vertices
+    voronoi_vertices <- vd$voronoi_vertices
+    # Get the first vertex of each simplex
+    vertex1 = points[tri[,1],]
+    # Calculate the circumradii of circumcircle
+    circumradii <- sqrt(rowSums((simplex1 - vd$voronoi_vertices) ^ 2))    
+    
     # Create list to return the desired alpha complex information
     alpha_complex <- list()
     alpha_complex$input_points <- points
-    in_alpha_complex <- vd$circumRadii <= alpha
+    in_alpha_complex <- circumradii <= alpha
     alpha_complex$simplices <- tri[in_alpha_complex, ]
-    
     if (nrow(alpha_complex$simplices) < 1) {
 	    alpha_complex$circumcentres <- NULL
 	    alpha_complex$circumradii <- NULL
 	    } else {
 	    alpha_complex$circumcentres <- vd$voronoi_vertices[in_alpha_complex,]
-	    alpha_complex$circumradii <- vd$circumRadii[in_alpha_complex]
+	    alpha_complex$circumradii <- circumradii[in_alpha_complex]
 	  }
 
   	return(alpha_complex)
