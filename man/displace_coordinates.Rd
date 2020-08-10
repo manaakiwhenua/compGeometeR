@@ -11,12 +11,12 @@ displace_coordinates(points = NULL, displace)
 represent \eqn{n} points and the \eqn{d} columns the coordinates in 
 \eqn{d}-dimensional space.}
 
-\item{displace}{a vector of real numbers that defines the radius of the 
+\item{displace}{Vector of length \code{n} that defines the radius of the 
 {\eqn{n}-ball} within which each point will be displaced.}
 }
 \value{
 Returns a \eqn{n}-by-\eqn{d} dataframe of coordinates that have been 
-  displaced based on the specified radii.
+  displaced.
 }
 \description{
 This function displaces each point coordinate within an 

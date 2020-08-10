@@ -7,11 +7,11 @@
 #' @param points a \eqn{n}-by-\eqn{d} dataframe or matrix. The rows
 #'   represent \eqn{n} points and the \eqn{d} columns the coordinates in 
 #'   \eqn{d}-dimensional space.
-#' @param displace a vector of real numbers that defines the radius of the 
+#' @param displace Vector of length \code{n} that defines the radius of the 
 #'   {\eqn{n}-ball} within which each point will be displaced.
 #' 
 #' @return Returns a \eqn{n}-by-\eqn{d} dataframe of coordinates that have been 
-#'   displaced based on the specified radii.
+#'   displaced.
 #' 
 #' @examples 
 #' # Define points
