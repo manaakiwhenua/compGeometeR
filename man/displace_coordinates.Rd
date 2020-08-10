@@ -4,15 +4,15 @@
 \alias{displace_coordinates}
 \title{Displace coordinates}
 \usage{
-displace_coordinates(points = NULL, radii)
+displace_coordinates(points = NULL, displace)
 }
 \arguments{
 \item{points}{a \eqn{n}-by-\eqn{d} dataframe or matrix. The rows
 represent \eqn{n} points and the \eqn{d} columns the coordinates in 
 \eqn{d}-dimensional space.}
 
-\item{radii}{a vector of real numbers that defines the radius of the 
-{eqn{n}-ball} within which each point will be displaced.}
+\item{displace}{a vector of real numbers that defines the radius of the 
+{\eqn{n}-ball} within which each point will be displaced.}
 }
 \value{
 Returns a \eqn{n}-by-\eqn{d} dataframe of coordinates that have been 
@@ -20,23 +20,24 @@ Returns a \eqn{n}-by-\eqn{d} dataframe of coordinates that have been
 }
 \description{
 This function displaces each point coordinate within an 
-  \href{https://en.wikipedia.org/wiki/Ball_(mathematics)}{eqn{n}-ball} of 
+  \href{https://en.wikipedia.org/wiki/Ball_(mathematics)}{\eqn{n}-ball} of 
   specified radius.
 }
 \examples{
 # Define points
-x <- c(30, 70, 20, 50, 40, 70)
+x <- c(30, 70, 20, 50, 40, 80)
 y <- c(35, 80, 70, 50, 60, 20)
 p <- data.frame(x, y)
-# Define uncertainty radii
-r <- c(2, 7, 5, 12, 0, 15)
-# Plot points with uncertainty radii
-plot(p, pch=16, asp=1)
-symbols(x=p[,1], y=p[,2], circles = p[,3], fg="blue", inches = FALSE, add = TRUE)
+# Define displacement radii
+r <- c(25, 15, 10, 22, 5, 17)
+# Plot points with displacement radii
+cols <- c("red", "blue", "orange", "skyblue", "green3", "hotpink")
+plot(p, pch=16, col=cols, asp=1, xlim=c(0,100), ylim=c(0,100))
+symbols(x=p[,1], y=p[,2], circles = r, fg=cols, inches = FALSE, add = TRUE)
 # Generate and plot some other possible locations
-for (i in seq(10)) {
-  u_boot = displace_coordinates(points = p, radii = r)
-  points(u_boot, pch=16, col="red", cex=0.5)
+for (i in seq(100)) {
+ u_boot <- displace_coordinates(points = p, displace = r)
+ points(u_boot, pch=4, col=cols, cex=0.5)
 }
 
 }
