@@ -4,30 +4,26 @@
 \alias{grid_coordinates}
 \title{Grid Coordinates}
 \usage{
-grid_coordinates(mins, maxs, nCoords)
+grid_coordinates(mins, maxs, spacing)
 }
 \arguments{
 \item{mins}{Vector of length \code{n} listing the point space minimum for each
 dimension.}
 
-\item{maxs}{Vector of length \code{n} listing the pointspace maximum for each
+\item{maxs}{Vector of length \code{n} listing the point space maximum for each
 dimension.}
 
-\item{nCoords}{Number of coordinates across the point space in all dimensions.}
+\item{spacing}{The spacings between points in all dimensions.}
 }
 \value{
-A matrix with \code{n} columns.
+A matrix with \code{n} columns - and potentially lots of rows!
 }
 \description{
-Create an \code{n}-dimensional grid of coordinates across space.
-}
-\details{
-This function creates a grid of coordinates systematically located
-throughout the specified point space to enable visualisation of alpha shape .
-The extent of the grid is given by the \code{mins} and \code{maxs}, and the number
-of coordinates for each dimension is given by \code{nCoords}.
+This function creates a \code{n}-dimensional grid of coordinates 
+systematically spaced throughout the specified spatial extent.
 }
 \examples{
 # Point space grid coordinates usage
-xy = grid_coordinates(mins=c(15,0), maxs=c(35,200), nCoords=5)
+xy = grid_coordinates(mins=c(0,0), maxs=c(10,15), spacing=1)
+
 }
