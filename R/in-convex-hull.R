@@ -71,7 +71,9 @@
     storage.mode(points) <- "double"
     
     # Check that the test points have the same dimensions as the convex hull
-    # TO DO!
+    if(ncol(test_points) != ncol(hull$input_points)){
+      stop(paste("test_points must have the same dimensions as hull", "\n"))
+    }
     
     # Specify the Qhull options: http://www.qhull.org/html/qh-optq.htm
     options <- "Qt"
