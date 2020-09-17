@@ -16,7 +16,7 @@
 #' is also NA.
 #' 
 #' @examples 
-#' # Define points and create a Delaunay triangulation
+#' # Define points and create an alpha complex
 #' x <- c(30, 70, 20, 50, 40, 70)
 #' y <- c(35, 80, 70, 50, 60, 20)
 #' p <- data.frame(x, y)
@@ -39,69 +39,65 @@
 #' @export
 find_simplex <- function(simplices, test_points) {
   
-  # Coerce the input to be matrix
+  # Coerce the input to be a data frame
   if(is.null(test_points)){
-    stop(paste("points must be an n-by-d dataframe or matrix", "\n"))
+    stop(paste("test_points must be an n-by-d dataframe or matrix", "\n"))
   }
   if(!is.data.frame(test_points) & !is.matrix(test_points)){
-    stop(paste("points must be a dataframe or matrix", "\n"))
+    stop(paste("test_points must be a dataframe or matrix", "\n"))
   }
-  if (is.data.frame(test_points)) {
-    test_points <- as.matrix(test_points)
+  if (is.matrix(test_points)) {
+    test_points <- as.data.frame(test_points)
   }
-
-  # Identify the simplices that test point belongs 
-  # First check if the point lies in the convex hull
-  tic("dd")
+  
+  # Check dimensions of inputs match
+  dim <- ncol(test_points)
+  if(dim != ncol(simplices$input_points)){
+    stop(paste("test_points must have the same dimensions as simplices", "\n"))
+  }  
+  
+  # As a first screen reduce test points to those in the convex hull
   hull <- convex_hull(points = simplices$input_points)
   inHull <- in_convex_hull(hull, test_points)
-  
+  inHull_test_point_indices <- which(inHull == TRUE)
+  inHull_test <- as.matrix(test_points[inHull_test_point_indices,])
+
   # Create an empty object to hold which simplex the test points are in
-  test_points_simplex <- rep(NA, nrow(test_points)) 
-  
-
-  
-  #profvis({  #start profiling
+  test_points_simplex <- rep(NA, nrow(test_points))
+  # For each simplex
+  for(simplex in c(1:nrow(simplices$simplices))) {
     
-  #tic("time") #track time
-  test_points_simplex <- rep(NA, nrow(test_points)) 
-  inHull_True=(which(inHull==TRUE)) #use which command to select the row which are true.
-  for(p in inHull_True) {
-        tp = rbind(c(test_points[p,]))
-        for(s in c(1:nrow(simplices$simplices))) {
-          
-          # Get the coordinates of the points that make the simplex
-          simplex_indices <- simplices$simplices[s, ]
-          simplex_coordinates <- simplices$input_points[simplex_indices, ]
-          
-          # Get the barycentric coordinate of the test point for the simplex
-     
-          test_barycentric <- barycentric_coordinate(simplex_coordinates, tp,1,ncol(tp))
-          
-          # The point is inside the triangle all of the barycentric coordinates 
-          # are positive
-          check_sign <- sign(test_barycentric[1, ])
-          if(length(which(check_sign == -1)) == 0) {
-            test_points_simplex[p] <- s
-            break    # the test point is inside this simplex so stop searching
-          } 
-        }
- 
+    # Get the coordinates of the points that make the simplex
+    simplex_indices <- simplices$simplices[simplex, ]
+    simplex_coordinates <- simplices$input_points[simplex_indices, ]
+    
+    # Calculate the minimum and maxium simplex coordinate in all dimensions
+    mins = apply(simplex_coordinates, MARGIN=2, FUN=min)
+    maxs = apply(simplex_coordinates, MARGIN=2, FUN=max)
+    # As a second screen reduce test points to those within the extent of the simplex
+    for (d in seq(dim)) {
+      if (d == 1) {
+        to_test = inHull_test[(inHull_test[,d] >= mins[d] & inHull_test[,d] <= maxs[d]), , drop = FALSE]
+      } else {
+        to_test = to_test[(to_test[,d] >= mins[d] & to_test[,d] <= maxs[d]), , drop = FALSE]
+      }
+    }
+    
+    n = nrow(to_test)
+    if (n > 0) {
+      # Calculate the barycentric coordinates of the test points for the simplex
+      X1 <- simplex_coordinates[1:dim,] - (matrix(1,dim,1) %*% simplex_coordinates[dim+1,,drop=FALSE])
+      barycentric_coords <- (to_test - matrix(simplex_coordinates[dim+1,], n, dim, byrow=TRUE)) %*% solve(X1)
+      barycentric_coords <- cbind(barycentric_coords, 1 - apply(barycentric_coords, 1, sum))
+      
+      # Those test points for which are coords are positive are in the simplex
+      barycentric_sign <- sign(barycentric_coords)
+      barycentric_sign_sum <- rowSums(barycentric_sign)
+      in_simplex = which(barycentric_sign_sum == d + 1)
+      test_points_simplex[as.numeric(row.names(to_test[in_simplex, , drop=FALSE]))] = simplex
+    }
   }
-  # toc() #stop tracking time
-  #}) #end profiling
-
-  return (test_points_simplex)
-  #return(.Call("C_findSimplex", hull$convexhull, test_points, PACKAGE="compGeometeR"))
-}
-
-# Internal function used by \code{\link{find_simplex}} to calculate the 
-# barycentric coordinate of a point in relation to a simplex
-barycentric_coordinate <- function(X, P,M,N) {
-
-  X1 <- X[1:N,] - (matrix(1,N,1) %*% X[N+1,,drop=FALSE])
-  Beta <- (P - matrix(X[N+1,], 1, N, byrow=TRUE)) %*% solve(X1)
-  Beta <- cbind(Beta, 1 - apply(Beta, 1, sum))
   
-  return(Beta)
+  return(test_points_simplex)
+  
 }
