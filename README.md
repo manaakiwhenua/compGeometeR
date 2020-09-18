@@ -11,7 +11,7 @@ The computational geometry algorithms available in `compGeometeR` and the number
 | `compGeometeR`* | `convex_hull` (_n_) |
 | `R` | `chull` (2) |
 | `geometry`* | `convhulln` (_n_) |
-* built using the [Qhull library](http://www.qhull.org/)
+\* built using the [Qhull library](http://www.qhull.org/)
 
 The following algorithm are available for use:
 
@@ -25,11 +25,17 @@ The following algorithm are available for use:
 
 ## Installation
 
-You can install `compGeometeR` from GitHub using the `devtools` package:
+You can install `compGeometeR` from GitHub using the `devtools` package.
+
+Install devtools from CRAN:
 
 ```r
-install.packages("devtools") # Install devtools from CRAN
-devtools::install_git("https://github.com/manaakiwhenua/compGeometeR") # Install compGeometeR from GitHub
+install.packages("devtools")
+```
+Install compGeometeR from GitHub:
+
+```r
+devtools::install_git("https://github.com/manaakiwhenua/compGeometeR")
 ```
 
 ## Dependencies
