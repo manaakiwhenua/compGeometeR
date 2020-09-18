@@ -12,11 +12,16 @@ The computational geometry algorithms available in `compGeometeR` and the number
 | `R` | `chull` (2) |
 | `geometry`* | `convhulln` (_n_) |
 
+| Package | `compGeometeR`* | `R` | `geometry`* | `deldir` |
+| ------- | --------------- | --- | ----------- | -------- |
+| [Convex hull](https://en.wikipedia.org/wiki/Convex_hull) | `convex_hull` (_n_) | `chull` (2) | `convhulln` (_n_) | |
+| [Convex layers](https://en.wikipedia.org/wiki/Convex_layers) | `convex_layer` (_n_) | | | |
+| [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) | `delaunay` (_n_) | | `delaunayn` (_n_) | `deldir` (2) |
+
+
 \* built using the [Qhull library](http://www.qhull.org/)
 
 The following algorithm are available for use:
-
-* Delunay: Computes the [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) by computing a [convex hull](https://en.wikipedia.org/wiki/Convex_hull)
 
 * In-Convex: Given a point with n-dimensional, the goal is to check which of the set of a test point are within the [convex hull](https://en.wikipedia.org/wiki/Convex_hull}{convex hull) 
 
