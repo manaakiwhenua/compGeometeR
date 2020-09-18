@@ -6,16 +6,10 @@
 
 The computational geometry algorithms available in `compGeometeR` and the number of dimensions in which they work are shown in the table below along with a variety of other `R` packages that we are aware of that also implement computational geometry algorithms.  By documenting these differences we hope to help users to assess if `compGeometeR` is the best option for their needs.
 
-| Package | [Convex hull](https://en.wikipedia.org/wiki/Convex_hull) |
-| --- | --- |
-| `compGeometeR`* | `convex_hull` (_n_) |
-| `R` | `chull` (2) |
-| `geometry`* | `convhulln` (_n_) |
-
-| Package | `compGeometeR`* | `R` | `geometry`* | `deldir` |
-| ------- | --------------- | --- | ----------- | -------- |
-| [Convex hull](https://en.wikipedia.org/wiki/Convex_hull) | `convex_hull` (_n_) | `chull` (2) | `convhulln` (_n_) | |
-| [Convex layers](https://en.wikipedia.org/wiki/Convex_layers) | `convex_layer` (_n_) | | | |
+| Package                                                                        | `compGeometeR`* | `R` | `geometry`* | `deldir` |
+| ------------------------------------------------------------------------------ | --------------- | --- | ----------- | -------- |
+| [Convex hull](https://en.wikipedia.org/wiki/Convex_hull)                       | `convex_hull` (_n_) | `chull` (2) | `convhulln` (_n_) | |
+| [Convex layers](https://en.wikipedia.org/wiki/Convex_layers)                   | `convex_layer` (_n_) | | | |
 | [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) | `delaunay` (_n_) | | `delaunayn` (_n_) | `deldir` (2) |
 
 
