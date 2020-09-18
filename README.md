@@ -2,7 +2,7 @@
 
 # compGeometeR
 
-`compGeometeR` aims to expose the implementation of various computational geometry algorithms in `R`. We believed by exposing these algorithms, the `R` user could easily apply these algorithms in solving problems in different domains.  For a start we have exposed some computation geometry implemented in the [Qhull library](http://www.qhull.org/) and implement additional algorithms using the output derived from the Qhull implemented algorithms.
+`compGeometeR` aims to implement commonly used computational geometry algorithms in `R`.  We believed that by implementing these algorithms within a single unified framework an `R` user could easily apply these algorithms in solving spatial problems in a variety of different domains.  For a start we have exposed some computation geometry implemented in the [Qhull library](http://www.qhull.org/) and implement additional algorithms using the output derived from the Qhull implemented algorithms.
 
 The computational geometry algorithms available in `compGeometeR` and the number of dimensions in which they work are shown in the table below along with a variety of other `R` packages that we are aware of that also implement computational geometry algorithms.  By documenting these differences we hope to help users to assess if `compGeometeR` is the best option for their needs.
 
@@ -14,9 +14,6 @@ The computational geometry algorithms available in `compGeometeR` and the number
 | [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram)               |                 |     | _n_         | 2        | 2          | 2         | 2           |                |
 | [Alpha complex](https://en.wikipedia.org/wiki/Alpha_shape#Alpha_complex)       | _n_             |     |             |          |            |           |             |                |
 | [Alpha shape](https://en.wikipedia.org/wiki/Alpha_shape)                       |                 |     |             |          |            |           | 2           | 3              |
-
-* In-Convex: Given a point with n-dimensional, the goal is to check which of the set of a test point are within the [convex hull](https://en.wikipedia.org/wiki/Convex_hull}{convex hull) 
-* Find simplex: Compute the simplices of a [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) or [alpha complex](href{https://en.wikipedia.org/wiki/Alpha_shape#Alpha_complex) that contain the given set of test points.
 
 ## Installation
 
