@@ -6,21 +6,16 @@
 
 The computational geometry algorithms available in `compGeometeR` and the number of dimensions in which they work are shown in the table below along with a variety of other `R` packages that we are aware of that also implement computational geometry algorithms.  By documenting these differences we hope to help users to assess if `compGeometeR` is the best option for their needs.
 
-| Package                                                                        | `compGeometeR`* | `R` | `geometry`* | `deldir` |
-| ------------------------------------------------------------------------------ | --------------- | --- | ----------- | -------- |
-| [Convex hull](https://en.wikipedia.org/wiki/Convex_hull)                       | `convex_hull` (_n_) | `chull` (2) | `convhulln` (_n_) | |
-| [Convex layers](https://en.wikipedia.org/wiki/Convex_layers)                   | `convex_layer` (_n_) | | | |
-| [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) | `delaunay` (_n_) | | `delaunayn` (_n_) | `deldir` (2) |
-
-
-\* built using the [Qhull library](http://www.qhull.org/)
-
-The following algorithm are available for use:
+|                                                                                | `compGeometeR`  | `R` | `geometry`  | `deldir` | `spatstat` | `tripack` | `alphahull` | `alphashape3d` |
+| ------------------------------------------------------------------------------ | --------------- | --- | ----------- | -------- | ---------- | --------- | ----------- | -------------- |
+| [Convex hull](https://en.wikipedia.org/wiki/Convex_hull)                       | _n_             | 2   | _n_         |          | 2          | 2         |             |                |
+| [Convex layers](https://en.wikipedia.org/wiki/Convex_layers)                   | _n_             |     |             |          |            |           |             |                |
+| [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) | _n_             |     | _n_         | 2        | 2          | 2         | 2           |                |
+| [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram)               |                 |     | _n_         | 2        | 2          | 2         | 2           |                |
+| [Alpha complex](https://en.wikipedia.org/wiki/Alpha_shape#Alpha_complex)       | _n_             |     |             |          |            |           |             |                |
+| [Alpha shape](https://en.wikipedia.org/wiki/Alpha_shape)                       |                 |     |             |          |            |           | 2           | 3              |
 
 * In-Convex: Given a point with n-dimensional, the goal is to check which of the set of a test point are within the [convex hull](https://en.wikipedia.org/wiki/Convex_hull}{convex hull) 
-
-* Alpha-Complex: Calculates the [alpha complex](href{https://en.wikipedia.org/wiki/Alpha_shape#Alpha_complex) of a set of point in n-dimensional using the [Qhull library](http://www.qhull.org/)
-
 * Find simplex: Compute the simplices of a [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) or [alpha complex](href{https://en.wikipedia.org/wiki/Alpha_shape#Alpha_complex) that contain the given set of test points.
 
 ## Installation
