@@ -26,7 +26,7 @@ Returns the simplices of a Delaunay triangulation or alpha
 complex that contain the given set of test points.
 }
 \examples{
-# Define points and create a Delaunay triangulation
+# Define points and create an alpha complex
 x <- c(30, 70, 20, 50, 40, 70)
 y <- c(35, 80, 70, 50, 60, 20)
 p <- data.frame(x, y)
