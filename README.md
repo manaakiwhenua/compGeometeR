@@ -2,9 +2,9 @@
 
 # compGeometeR
 
-`compGeometeR` aims to implement commonly used computational geometry algorithms in `R`.  We believed that by implementing these algorithms within a single unified framework an `R` user could easily apply these algorithms in solving spatial problems in a variety of different domains.  For a start we have exposed some computation geometry implemented in the [Qhull library](http://www.qhull.org/) and implement additional algorithms using the output derived from the Qhull implemented algorithms.
+`compGeometeR` aims to implement commonly used computational geometry algorithms in `R`.  We believed that by implementing these algorithms within a single unified framework an `R` user could easily apply these algorithms in solving spatial problems in a variety of different domains, and we are building a [`compGeometeR` cookbook](https://github.com/manaakiwhenua/compGeometeR/wiki) that illustrates various use cases.
 
-The computational geometry algorithms available in `compGeometeR` and the number of dimensions in which they work are shown in the table below along with a variety of other `R` packages that we are aware of that also implement computational geometry algorithms.  By documenting these differences we hope to help users to assess if `compGeometeR` is the best option for their needs.
+`compGeometeR` is built using the [Qhull library](http://www.qhull.org/) and the computational geometry algorithms available in `compGeometeR` and the number of dimensions in which they work are shown in the table below along with a variety of other `R` packages that we are aware of that also implement computational geometry algorithms.  By documenting these differences we hope to help users to assess if `compGeometeR` is the best option for their needs.
 
 |                                                                                | `compGeometeR`  | `R` | `geometry`  | `deldir` | `spatstat` | `tripack` | `alphahull` | `alphashape3d` |
 | ------------------------------------------------------------------------------ | --------------- | --- | ----------- | -------- | ---------- | --------- | ----------- | -------------- |
