@@ -1,13 +1,13 @@
 Package: compGeometeR
 Type: Package
-Title: Create Computational Geometry Algorithms for use in R
+Title: Computational Geometry Algorithms for use in R
 Version: 1.0
 Date: 2020-05-15
 Authors@R: c(
     person("O. Pascal", "Omondiagbe" , role=c("aut","cre"), email="omondiagbep@landcareresearch.co.nz"),
-    person("Tom", "Etherington", role=c("aut"), email="etheringtonT@landcareresearch.co.nz"))
+    person("Thomas R.", "Etherington", role=c("aut"), email="etheringtont@landcareresearch.co.nz"))
 Maintainer: O. Pascal Omondiagbe <omondiagbep@landcareresearch.co.nz>
-Description: Create Computational Geometry Algorithms for use in R 
+Description: Computational Geometry Algorithms for use in R 
 License: GPU
 Depends: R (>= 3.5.1)
 Imports: 
