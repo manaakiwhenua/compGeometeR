@@ -1,0 +1,52 @@
+\begin{thebibliography}{11}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Barber et~al.(1996)Barber, Dobkin, and Huhdanpaa}]{barber-1996}
+Barber CB, Dobkin DP, Huhdanpaa H (1996) The {Quickhull} algorithm for convex
+  hulls. ACM Transactions on Mathematical Software 22: 469--483
+
+\bibitem[{Barnett(1976)}]{barnett-1976}
+Barnett V (1976) The ordering of multivariate data. Journal of the Royal
+  Statistical Society. Series A 139: 318--355
+
+\bibitem[{de~Berg et~al.(2008)de~Berg, Cheong, van Kreveld, and
+  Overmars}]{de-berg-2008}
+de~Berg M, Cheong O, van Kreveld M, Overmars M (2008) Computational Geometry,
+  3rd edition. Springer, Berlin
+
+\bibitem[{Delaunay(1934)}]{delaunay-1934}
+Delaunay B (1934) Sur la sphère vide. Bulletin de l'Académie des Sciences de
+  l'URSS, Classe des Sciences Mathématiques et Naturelles 6: 793--800
+
+\bibitem[{Edelsbrunner and Mücke(1994)}]{edelsbrunner-1994}
+Edelsbrunner H, Mücke EP (1994) Three-dimensional alpha shapes. ACM
+  Transactions on Graphics 13: 43--72
+
+\bibitem[{Gabriel and Sokal(1969)}]{gabriel-1969}
+Gabriel KR, Sokal RR (1969) A new statistical approach to geographic variation
+  analysis. Systematic Biology 18: 259--278
+
+\bibitem[{Huber(1972)}]{huber-1972}
+Huber PJ (1972) Robust statistics: a review. The Annals of Mathematical
+  Statistics 43: 1041--1067
+
+\bibitem[{Rosenfeld(1998)}]{rosenfeld-1998}
+Rosenfeld A (1998) Fuzzy geometry an updated overview. Information Sciences
+  110: 127--133
+
+\bibitem[{Rosenfeld and Melter(1989)}]{rosenfeld-1989}
+Rosenfeld A, Melter RA (1989) Digital geometry. The Mathematical Intelligencer
+  11: 69--72
+
+\bibitem[{Toussaint(1980)}]{toussaint-1980}
+Toussaint GT (1980) The relative neighbourhood graph of a finite planar set.
+  Pattern Recognition 12: 261--268
+
+\bibitem[{Urquhart(1980)}]{urquhart-1980}
+Urquhart RB (1980) Algorithms for computation of relative neighbourhood graph.
+  Electronics Letters 16: 556--557
+
+\end{thebibliography}
