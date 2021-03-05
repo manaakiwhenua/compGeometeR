@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{12}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -32,6 +32,9 @@ Gabriel KR, Sokal RR (1969) A new statistical approach to geographic variation
 \bibitem[{Huber(1972)}]{huber-1972}
 Huber PJ (1972) Robust statistics: a review. The Annals of Mathematical
   Statistics 43: 1041--1067
+
+\bibitem[{Klette and Rosenfeld(2004)}]{klette-2004}
+Klette R, Rosenfeld A (2004) Digital Geometry. Morgan Kaufmann, San Francisco
 
 \bibitem[{Rosenfeld(1998)}]{rosenfeld-1998}
 Rosenfeld A (1998) Fuzzy geometry an updated overview. Information Sciences

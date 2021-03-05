@@ -85,7 +85,6 @@ There are a variety of computational geometry algorithms available in compGeomet
   Alpha complex				& $n$ &   &     &   &   &     &   &   \\
   Alpha shape				& $n$ &   &     &   &   &     &   &   \\
   Convex hull  				& $n$ &   &     &   &   &     &   &   \\
-  Delaunay triangulation	& $n$ &   &     &   &   &     &   &   \\
   \bottomrule
 \end{tabular}
 \label{tab:r-options}
@@ -94,7 +93,7 @@ There are a variety of computational geometry algorithms available in compGeomet
 \subsection{Discrete geometry}
 % see: https://en.wikipedia.org/wiki/Discrete_geometry
 
-Discrete geometry studies the shapes and interactions between sets of discrete objects such as points, lines, circles, and polygons in 2-dimensional space.  All of the discrete computioanl geomtery algorithms in compGeometeR take as an input a set of points $P$ in $n$-dimensional Eucliden space $\mathbb{R}^n$.
+Discrete geometry studies the shapes and interactions between sets of discrete objects such as points, lines, circles, and polygons in 2-dimensional space.  All of the discrete computioanl geomtery algorithms in compGeometeR take as an input a set of points $P$ in $n$-dimensional Euclidean space $\mathbb{R}^n$.
 
 A convex hull defines the smallest subset of $\mathbb{R}^n$ that contains $P$ and for which the subset is convex so any two points within the convex hull can be connected by a straight line also contained by the convex hull (Figure \ref{fig:euclidean-algorithms}a).
 
@@ -115,7 +114,7 @@ The alpha complex \citep{edelsbrunner-1994} is a subset of the Delaunay triangul
 \subsection{Digital geometry}
 % see: https://en.wikipedia.org/wiki/Digital_geometry
 
-Digital geometry is a branch of geometry that studies the geometric properties of a grid (or lattice) of points in Euclidean space, and usually involves the digitisation of discrete lines and regions \citep{rosenfeld-1989}.
+Digital geometry is a branch of geometry that studies the geometric properties of a grid (or lattice) of points in Euclidean space, and usually involves the digitisation of discrete lines and regions \citep{rosenfeld-1989}.  Digitisation occurs by representing Euclidean space $\mathbb{R}^n$ as a a rectangular orthogonal grid $\mathbb{G}^n$.  The elements of $\mathbb{G}^2$ are called pixels, and the elements of $\mathbb{G}^3$ are called voxels \citep{klette-2004}.  Each element in $\mathbb{G}^n$ has a grid coordinate for its centre, and a value that denotes if the element belongs to digitised geometric object, or when required which part of the digitised geometric object.
 
 
 
@@ -123,6 +122,8 @@ Digital geometry is a branch of geometry that studies the geometric properties o
 \section{Future work}
 
 compGeometeR is very much a work in progress, and while there is sufficient functionality for it to be of wide use in the computational sciences, there is some functionality that has been identified as being particularly useful for future development.
+
+[Note inclusion of the Voronoi diagram for discrete geometry algorithms, and making more of the discrete algorithms available in digital form.]
 
 \subsection{Geometric graph theory}
 % see: https://en.wikipedia.org/wiki/Geometric_graph_theory

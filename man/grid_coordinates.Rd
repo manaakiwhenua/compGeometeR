@@ -4,7 +4,7 @@
 \alias{grid_coordinates}
 \title{Grid Coordinates}
 \usage{
-grid_coordinates(mins, maxs, spacing)
+grid_coordinates(mins, maxs, spacings)
 }
 \arguments{
 \item{mins}{Vector of length \code{n} listing the point space minimum for each
@@ -13,7 +13,8 @@ dimension.}
 \item{maxs}{Vector of length \code{n} listing the point space maximum for each
 dimension.}
 
-\item{spacing}{The spacings between points in all dimensions.}
+\item{spacings}{Vector of length \code{n} listing the spacings between points 
+in all dimensions.}
 }
 \value{
 A matrix with \code{n} columns - and potentially lots of rows!
@@ -24,6 +25,6 @@ systematically spaced throughout the specified spatial extent.
 }
 \examples{
 # Point space grid coordinates usage
-xy = grid_coordinates(mins=c(0,0), maxs=c(10,15), spacing=1)
+xy = grid_coordinates(mins=c(0,0), maxs=c(10,15), spacings=c(1,1))
 
 }
