@@ -114,38 +114,23 @@ The alpha complex \citep{edelsbrunner-1994} is a subset of the Delaunay triangul
 \subsection{Digital geometry}
 % see: https://en.wikipedia.org/wiki/Digital_geometry
 
-Digital geometry is a branch of geometry that studies the geometric properties of a grid (or lattice) of points in Euclidean space, and usually involves the digitisation of discrete lines and regions \citep{rosenfeld-1989}.  Digitisation occurs by representing Euclidean space $\mathbb{R}^n$ as a a rectangular orthogonal grid $\mathbb{G}^n$.  The elements of $\mathbb{G}^2$ are called pixels, and the elements of $\mathbb{G}^3$ are called voxels \citep{klette-2004}.  Each element in $\mathbb{G}^n$ has a grid coordinate for its centre, and a value that denotes if the element belongs to digitised geometric object, or when required which part of the digitised geometric object.
+Digital geometry is a branch of geometry that studies the geometric properties of a grid (or lattice) of points in Euclidean space, and usually involves the digitisation of discrete lines and regions \citep{rosenfeld-1989}.  Digitisation occurs by representing Euclidean space $\mathbb{R}^n$ as a a rectangular orthogonal grid $\mathbb{G}^n$.  The elements of $\mathbb{G}^2$ are called pixels, and the elements of $\mathbb{G}^3$ are called voxels, and each element in $\mathbb{G}^n$ has a grid coordinate for its centre \citep{klette-2004} and a value that denotes if the element belongs to a digitised geometric object, or when required, which part of the digitised geometric object .
+
+
+
 
 
 
 
 \section{Future work}
 
-compGeometeR is very much a work in progress, and while there is sufficient functionality for it to be of wide use in the computational sciences, there is some functionality that has been identified as being particularly useful for future development.
-
-[Note inclusion of the Voronoi diagram for discrete geometry algorithms, and making more of the discrete algorithms available in digital form.]
-
-\subsection{Geometric graph theory}
-% see: https://en.wikipedia.org/wiki/Geometric_graph_theory
-
-Geometric graph theory...
+compGeometeR is very much a work in progress, and while there is sufficient functionality for it to be of wide use in the computational sciences, there is some functionality that has been identified as being particularly useful for future development.  The Voronoi diagram would be an obvious addition for the discrete geometry algorithms, as would making more of the discrete algorithms available in digital form.
 
 There are a variety of useful graph structures that can be produced based on geometric principles.  For example, the Delaunay triangulation \citep{delaunay-1934} can also be represented as a graph structure, and for which there are several useful subgraphs such as the Gabriel graph \citep{gabriel-1969}, Urquhart graph \citep{urquhart-1980}, and relative neighbourhood graph \citep{toussaint-1980}.
 
+In some contexts it will be important to recognise that there is uncertainty in the position of points in space and the parameters defining a given algorithm.  In such situations it may be helpful to adopt fuzzy geometry \citep{rosenfeld-1998} view in which, foe example, memberships of points in space are not crisp being either 0 or 1, but rather are fuzzy on a scale from 0 to 1.  Creating fuzzy versions of the compGeometeR algorithms could result in very useful functionality where quantifying uncertainty of any computational geometry is important.  The existing digital geometric algorithms could be easily extended to fuzzy forms as all that is required is to assign a membership value to each pixel \citep{klette-2004}.
 
-
-\subsection{Spherical and ellipsoidal geometry}
-% see: https://en.wikipedia.org/wiki/Spherical_geometry
-% see: https://en.wikipedia.org/wiki/Elliptic_geometry
-
-All the algorithms in compGeometeR work in Cartesian space.
-
-\subsection{Fuzzy geometry}
-
-In some contexts it will be important to recognise that there is uncertainty in the position of points in space and the parameters defining a given algorithm.  In such situations it may be helpful to adopt fuzzy geometry \citep{rosenfeld-1998} view in which, foe example, memberships of points in space are not crisp being either 0 or 1, but rather are fuzzy on a scale from 0 to 1.  Creating fuzzy versions of the compGeometeR algorithms could result in very useful functionality where quantifying uncertainty of any computational geometry is important.  The existing digital geometric algorithms could be easily extended to fuzzy forms as all that is required is to 
-
-
-
+All the algorithms in compGeometeR work in Cartesian space, but there are logical extensions of these methodologies to spherical or ellipsoidal surfaces.
 
 \section{Code availability}
 
