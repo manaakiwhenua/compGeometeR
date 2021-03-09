@@ -10,11 +10,14 @@
 #' @param spacings Vector of length \code{n} listing the spacings between points 
 #' in all dimensions.
 #'
-#' @return A matrix with \code{n} columns - and potentially lots of rows!
+#' @return A list of two objects.  The first object is a dataframe with \code{n} 
+#' columns and a row for each coordinate - so potentially lots of rows!  The 
+#' second object is another list of length \code{n} that contains the 
+#' coordinates along each dimension.
 #'
 #' @examples
 #' # Point space grid coordinates usage
-#' xy = grid_coordinates(mins=c(0,0), maxs=c(10,15), spacings=c(1,1))
+#' grid = grid_coordinates(mins=c(0,0), maxs=c(10,15), spacings=c(1,1))
 #' 
 #' @export
 grid_coordinates <- function(mins, maxs, spacings) {

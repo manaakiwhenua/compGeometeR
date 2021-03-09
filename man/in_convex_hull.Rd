@@ -14,9 +14,9 @@ represent \eqn{n} points and the \eqn{d} columns the coordinates in
 \eqn{d}-dimensional space.}
 }
 \value{
-A \eqn{n} length vector containing \code{TRUE} if test point \eqn{n} 
-lies within the hull and \code{FALSE} if it lies outside the hull.  If any of 
-the test point coordinates contain NA then the output is also NA.
+A \eqn{n} length vector containing 1 if test point \eqn{n} 
+lies within the hull and 0 if it lies outside the hull.  If any of 
+the test point coordinates contain NA then the output is 0.
 }
 \description{
 Given a \eqn{d}-dimensional 

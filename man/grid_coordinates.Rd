@@ -17,7 +17,10 @@ dimension.}
 in all dimensions.}
 }
 \value{
-A matrix with \code{n} columns - and potentially lots of rows!
+A list of two objects.  The first object is a dataframe with \code{n} 
+columns and a row for each coordinate - so potentially lots of rows!  The 
+second object is another list of length \code{n} that contains the 
+coordinates along each dimension.
 }
 \description{
 This function creates a \code{n}-dimensional grid of coordinates 
@@ -25,6 +28,6 @@ systematically spaced throughout the specified spatial extent.
 }
 \examples{
 # Point space grid coordinates usage
-xy = grid_coordinates(mins=c(0,0), maxs=c(10,15), spacings=c(1,1))
+grid = grid_coordinates(mins=c(0,0), maxs=c(10,15), spacings=c(1,1))
 
 }
