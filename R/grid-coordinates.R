@@ -34,11 +34,15 @@ grid_coordinates <- function(mins, maxs, spacings) {
   }
   
   # Create list of coordinate locations for each dimension
-  dimCoords = list()
-  for (n in seq(1, length(mins))) {
-    dimCoords[[n]] <- seq(mins[n], maxs[n], spacings[n])
+  dims = length(mins)
+  dimension_coords <- list()
+  for (n in seq(dims)) {
+    dimension_coords[[n]] <- seq(mins[n], maxs[n], spacings[n])
   }
   # Create all combinations of coordinates across all dimension
-  return(expand.grid(dimCoords))
+  grid_coords <- expand.grid(dimension_coords, KEEP.OUT.ATTRS = FALSE)
+  colnames(grid_coords) <- seq(dims)
+  
+  return(list(grid_coords, dimension_coords))
   
 }
