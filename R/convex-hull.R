@@ -40,9 +40,7 @@
 #' # Create convex hull and plot
 #' ch <- convex_hull(points=p)
 #' plot(p, pch = as.character(seq(nrow(p))))
-#' for (s in seq(nrow(ch$hull_simplices))) {
-#'   lines(ch$input_points[ch$hull_simplices[s, ], ], col = "red")
-#' }
+#' polygon(ch$hull_vertices, border="red")
 #' 
 #' @export
   convex_hull <- function(points=NULL) {

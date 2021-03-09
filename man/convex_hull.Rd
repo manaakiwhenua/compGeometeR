@@ -24,6 +24,10 @@ Returns a list consisting of:
   \item \code{hull_vertices}: a matrix of point coordinates that form the 
   convex hull.
 }
+
+In the \eqn{2}-dimensional case the convex hull indices and vertices are 
+returned in a circular order to ease plotting, but in other dimensions there 
+is no specific order.
 }
 \description{
 This function calculates the 
@@ -39,9 +43,7 @@ p <- data.frame(x, y)
 # Create convex hull and plot
 ch <- convex_hull(points=p)
 plot(p, pch = as.character(seq(nrow(p))))
-for (s in seq(nrow(ch$hull_simplices))) {
-  lines(ch$input_points[ch$hull_simplices[s, ], ], col = "red")
-}
+polygon(ch$hull_vertices, border="red")
 
 }
 \references{
