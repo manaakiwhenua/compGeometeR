@@ -22,6 +22,10 @@
 #'   convex hull.
 #' }
 #' 
+#' In the \eqn{2}-dimensional case the convex hull indices and vertices are 
+#' returned in a circular order to ease plotting, but in other dimensions there 
+#' is no specific order.
+#' 
 #' @seealso \code{\link{convex_layer}}
 #' 
 #' @references Barber CB, Dobkin DP, Huhdanpaa H (1996) The Quickhull algorithm 
@@ -82,6 +86,16 @@
   	convex$hull_simplices <- as.matrix(simplices)
   	convex$hull_indices <- unique(c(as.integer(ch$convex_hull + 1)))
   	convex$hull_vertices <- points[convex$hull_indices,]
+  	
+  	# If the convex hull is 2-dimensional sort the vertices in a circular order
+  	if (ncol(points) == 2) {
+  	  midpoint <- colMeans(convex$hull_vertices)
+      angles <- atan2(convex$hull_vertices[,1] - midpoint[1], convex$hull_vertices[,2] - midpoint[2])
+      angles[angles < 0] <- angles[angles < 0] + 2 * pi
+      ch_vertices_order <- sort(angles, index.return=TRUE)$ix
+      convex$hull_indices <- convex$hull_indices[ch_vertices_order,]
+  	  convex$hull_vertices <- points[convex$hull_indices,]
+  	}
   
   	return(convex)
   }
