@@ -1,4 +1,4 @@
-\begin{thebibliography}{12}
+\begin{thebibliography}{16}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -29,12 +29,26 @@ Edelsbrunner H, Mücke EP (1994) Three-dimensional alpha shapes. ACM
 Gabriel KR, Sokal RR (1969) A new statistical approach to geographic variation
   analysis. Systematic Biology 18: 259--278
 
+\bibitem[{Gowers(2003)}]{gowers-2003}
+Gowers T (2003) Mathematics: a very short introduction. Oxford University
+  Press, New York
+
 \bibitem[{Huber(1972)}]{huber-1972}
 Huber PJ (1972) Robust statistics: a review. The Annals of Mathematical
   Statistics 43: 1041--1067
 
 \bibitem[{Klette and Rosenfeld(2004)}]{klette-2004}
 Klette R, Rosenfeld A (2004) Digital Geometry. Morgan Kaufmann, San Francisco
+
+\bibitem[{Okabe et~al.(2000)Okabe, Boots, Sugihara, and Chiu}]{okabe-2000}
+Okabe A, Boots B, Sugihara K, Chiu SN (2000) Spatial Tessellations: concepts
+  and applications of {Voronoi} diagrams, second edition edition. John Wiley \&
+  Sons, Chichester
+
+\bibitem[{Renka(1997)}]{renka-1997}
+Renka RJ (1997) Algorithm 772: Stripack: Delaunay triangulation and voronoi
+  diagram on the surface of a sphere. ACM Transactions on Mathematical Software
+  23: 416--434
 
 \bibitem[{Rosenfeld(1998)}]{rosenfeld-1998}
 Rosenfeld A (1998) Fuzzy geometry an updated overview. Information Sciences
@@ -51,5 +65,11 @@ Toussaint GT (1980) The relative neighbourhood graph of a finite planar set.
 \bibitem[{Urquhart(1980)}]{urquhart-1980}
 Urquhart RB (1980) Algorithms for computation of relative neighbourhood graph.
   Electronics Letters 16: 556--557
+
+\bibitem[{Voronoï(1908)}]{voronoi-1908}
+Voronoï G (1908) Nouvelles applications des paramètres continus à la
+  théorie des formes quadratiques. {Premier} mémoire. {Sur} quelques
+  propriétés des formes quadratiques positives parfaites. Journal für die
+  reine und angewandte Mathematik 133: 97--102
 
 \end{thebibliography}
