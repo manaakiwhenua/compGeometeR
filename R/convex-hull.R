@@ -93,7 +93,8 @@
       angles <- atan2(convex$hull_vertices[,1] - midpoint[1], convex$hull_vertices[,2] - midpoint[2])
       angles[angles < 0] <- angles[angles < 0] + 2 * pi
       ch_vertices_order <- sort(angles, index.return=TRUE)$ix
-      convex$hull_indices <- convex$hull_indices[ch_vertices_order,]
+      
+      convex$hull_indices <- convex$hull_indices[ch_vertices_order]
   	  convex$hull_vertices <- points[convex$hull_indices,]
   	}
   
