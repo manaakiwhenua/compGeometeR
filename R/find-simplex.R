@@ -11,9 +11,9 @@
 #'   \eqn{d}-dimensional space. 
 #' 
 #' @return A \eqn{n} length vector containing the index of the simplex the test 
-#' point is within, or a value of NA if a test point is not within any of the 
+#' point is within, or a value of 0 if a test point is not within any of the 
 #' simplices.  If any of the test point coordinates contain NA then the output 
-#' is also NA.
+#' is also 0.
 #' 
 #' @examples 
 #' # Define points and create an alpha complex
@@ -63,7 +63,7 @@ find_simplex <- function(simplices, test_points) {
   inHull_test <- as.matrix(test_points[inHull_test_point_indices,])
 
   # Create an empty object to hold which simplex the test points are in
-  test_points_simplex <- rep(NA, nrow(test_points))
+  test_points_simplex <- rep(0, nrow(test_points))
   # For each simplex
   for(simplex in c(1:nrow(simplices$simplices))) {
     
