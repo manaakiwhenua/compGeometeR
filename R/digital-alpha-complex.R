@@ -1,4 +1,4 @@
-#' @title Digital convex hull
+#' @title Digital alpha complex
 #' 
 #' @description  This function calculates the digital 
 #' \href{https://en.wikipedia.org/wiki/Alpha_shape#Alpha_complex}{alpha complex}
@@ -37,28 +37,32 @@
 #' x <- c(30, 70, 20, 50, 40, 70)
 #' y <- c(35, 80, 70, 50, 60, 20)
 #' p <- data.frame(x, y)
-#' # Create digital convex hull and plot
-#' d_ch <- digital_convex_hull(points = p, mins=c(15,15), maxs=c(85,85), spacings=c(0.5,0.5))
-#' image(x=d_ch[[3]][[1]], y=d_ch[[3]][[2]], z=d_ch[[1]], xlab="x", ylab="y")
+#' # Create digital alpha complex and plot
+#' d_ac <- digital_alpha_complex(points = p, alpha = 20, mins=c(15,15), maxs=c(85,85), spacings=c(0.5,0.5))
+#' cols = c("lightgrey", "orange", "purple", "lightseagreen")
+#' image(x=d_ac[[3]][[1]], y=d_ac[[3]][[2]], z=d_ac[[1]], xlab="x", ylab="y", col = cols)
+#' points(p, pch = as.character(seq(nrow(p))))
+#' legend("bottomleft", pch=15, col=cols, legend=sort(unique(c(d_ac[[1]]))), title="Simplex")
 #' points(p, pch = as.character(seq(nrow(p))))
 #' 
 #' @export
-digital_convex_hull <- function(points, mins, maxs, spacings) {
+digital_alpha_complex <- function(points=NULL, alpha=Inf, mins, maxs, spacings) {
 
-  # Create the discrete convex hull
-  ch <- convex_hull(points=p)
+  # Create the discrete alpha complex
+  ac <- alpha_complex(points = p, alpha = alpha)
   # Generate a grid of coordinates
   grid <- grid_coordinates(mins, maxs, spacings)
-  # Check which grid coordinates are in the convex hull
-  m <- in_convex_hull(ch, grid[[1]])
+  # Check which simplex the grid coordinates are in
+  m <- find_simplex(ac, grid[[1]])
   # Get the grid length of each dimension
   dim_n <- c()
   for (dim in grid[[2]]) {
     dim_n <- c(dim_n, length(dim))
   }
   # Create an array of the results
-  ch_array <- array(m, dim=dim_n)
+  ac_array <- array(m, dim=dim_n)
   
-  return(list(ch_array, cbind(grid[[1]], m), grid[[2]]))
+  return(list(ac_array, cbind(grid[[1]], m), grid[[2]]))
   
 }
+
