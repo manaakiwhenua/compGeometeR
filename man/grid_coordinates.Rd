@@ -7,23 +7,27 @@
 grid_coordinates(mins, maxs, spacings)
 }
 \arguments{
-\item{mins}{Vector of length \code{n} listing the point space minimum for each
-dimension.}
+\item{mins}{Vector of length \code{d} listing the grid coordinate minimum for 
+each dimension.}
 
-\item{maxs}{Vector of length \code{n} listing the point space maximum for each
-dimension.}
+\item{maxs}{Vector of length \code{d} listing the grid coordinate maximum for 
+each dimension.}
 
-\item{spacings}{Vector of length \code{n} listing the spacings between points 
-in all dimensions.}
+\item{spacings}{Vector of length \code{d} listing the grid coordinate spacing 
+for each dimension.}
 }
 \value{
-A list of two objects.  The first object is a dataframe with \code{n} 
-columns and a row for each coordinate - so potentially lots of rows!  The 
-second object is another list of length \code{n} that contains the 
-coordinates along each dimension.
+A list of two objects:
+
+\itemize{
+  \item A dataframe with \code{d} columns and a row for each grid coordinate 
+  - so potentially lots of rows!
+  \item A list of length \code{d} that contains the grid coordinates along 
+  each dimension.
+}
 }
 \description{
-This function creates a \code{n}-dimensional grid of coordinates 
+This function creates a \code{d}-dimensional grid of coordinates 
 systematically spaced throughout the specified spatial extent.
 }
 \examples{

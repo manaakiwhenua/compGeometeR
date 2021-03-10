@@ -17,9 +17,9 @@ represent \eqn{n} points and the \eqn{d} columns the coordinates in
 }
 \value{
 A \eqn{n} length vector containing the index of the simplex the test 
-point is within, or a value of NA if a test point is not within any of the 
+point is within, or a value of 0 if a test point is not within any of the 
 simplices.  If any of the test point coordinates contain NA then the output 
-is also NA.
+is also 0.
 }
 \description{
 Returns the simplices of a Delaunay triangulation or alpha 
