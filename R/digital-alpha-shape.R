@@ -44,22 +44,13 @@
 #' @export
 digital_alpha_shape <- function(points=NULL, alpha=Inf, mins, maxs, spacings) {
 
-  # Create the discrete alpha complex
-  ac <- alpha_complex(points = p, alpha = alpha)
-  # Generate a grid of coordinates
-  grid <- grid_coordinates(mins, maxs, spacings)
-  # Check if the grid coordinates are in a simplex
-  m <- find_simplex(ac, grid[[1]])
-  m[m >= 1] <- 1
-  # Get the grid length of each dimension
-  dim_n <- c()
-  for (dim in grid[[2]]) {
-    dim_n <- c(dim_n, length(dim))
-  }
-  # Create an array of the results
-  as_array <- array(m, dim=dim_n)
+  # Create the digital alpha complex
+  d_ac = digital_alpha_complex(points, alpha, mins, maxs, spacings)
+  # Identify grid coordinaes in any simplex
+  d_ac[[1]][d_ac[[1]] >=1] = 1
+  d_ac[[2]][,3][d_ac[[2]][,3] >= 1] = 1
   
-  return(list(as_array, cbind(grid[[1]], m), grid[[2]]))
+  return(d_ac)
   
 }
 
