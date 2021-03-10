@@ -90,11 +90,12 @@ find_simplex <- function(simplices, test_points) {
       barycentric_coords <- (to_test - matrix(simplex_coordinates[dim+1,], n, dim, byrow=TRUE)) %*% solve(X1)
       barycentric_coords <- cbind(barycentric_coords, 1 - apply(barycentric_coords, 1, sum))
       
-      # Those test points for which are coords are positive are in the simplex
+      # Those test points for which are coords are non-negative are in the simplex
       barycentric_sign <- sign(barycentric_coords)
+      barycentric_sign[barycentric_sign == 0] = 1
       barycentric_sign_sum <- rowSums(barycentric_sign)
-      in_simplex = which(barycentric_sign_sum == d + 1)
-      test_points_simplex[as.numeric(row.names(to_test[in_simplex, , drop=FALSE]))] = simplex
+      in_simplex <- which(barycentric_sign_sum == d + 1)
+      test_points_simplex[as.numeric(row.names(to_test[in_simplex, , drop=FALSE]))] <- simplex
     }
   }
   

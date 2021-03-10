@@ -1,13 +1,17 @@
 #' @title Digital convex hull
 #' 
 #' @description  This function calculates the digital 
-#' \href{https://en.wikipedia.org/wiki/Convex_hull}{convex hull} around a set of
-#' \eqn{n} points in \eqn{d}-dimensional space based upon a grid of 
+#' \href{https://en.wikipedia.org/wiki/Alpha_shape#Alpha_complex}{alpha complex}
+#' of a set of \eqn{n} points in \eqn{d}-dimensional space based upon a grid of 
 #' \eqn{d}-dimensional coordinates.
 #'
 #' @param points a \eqn{n}-by-\eqn{d} dataframe or matrix. The rows
 #'   represent \eqn{n} points and the \eqn{d} columns the coordinates in 
 #'   \eqn{d}-dimensional space.
+#' @param alpha a real number between zero and infinity that defines the maximum 
+#'   circumradii for a simplex to be included in the alpha complex.  If 
+#'   unspecified \code{alpha} defaults to infinity and the alpha complex is 
+#'   equivalent to a Delaunay triangulation.
 #' @param mins Vector of length \code{d} listing the grid coordinate minimum for 
 #' each dimension.
 #' @param maxs Vector of length \code{d} listing the grid coordinate maximum for 
@@ -18,9 +22,10 @@
 #' @return A list of three objects:
 #' 
 #' \itemize{
-#'   \item A \eqn{d}-dimensional array containing 1 if a grid coordinate lies 
-#'   within the hull and 0 if it lies outside the hull (if any of the test point 
-#'   coordinates contain NA then the output is 0).
+#'   \item A \eqn{d}-dimensional array containing an integer index of the alpha 
+#'   complex \eqn{s} \href{https://en.wikipedia.org/wiki/Simplex}{simplex} that 
+#'   each grid coordinate lies within, or 0 if it lies outside the alpha complex 
+#'   (if any of the test point coordinates contain NA then the output is 0).
 #'   \item A dataframe with \code{d} columns and a row for each grid coordinate 
 #'   - so potentially lots of rows!
 #'   \item A list of length \code{d} that contains the grid coordinates along 
@@ -38,7 +43,7 @@
 #' points(p, pch = as.character(seq(nrow(p))))
 #' 
 #' @export
-digital_convex_hull <- function(points=NULL, mins, maxs, spacings) {
+digital_convex_hull <- function(points, mins, maxs, spacings) {
 
   # Create the discrete convex hull
   ch <- convex_hull(points=p)
