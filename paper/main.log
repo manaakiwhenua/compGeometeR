@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.6.15)  11 MAR 2021 10:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.6.15)  11 MAR 2021 12:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -373,13 +373,13 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<figures/software-structure/software-structure.png, id=50, 2007.5pt x 1292.83pt
+<figures/software-structure/software-structure.png, id=58, 2007.5pt x 1292.83pt
 >
 File: figures/software-structure/software-structure.png Graphic file (type png)
 
 <use figures/software-structure/software-structure.png>
 Package pdftex.def Info: figures/software-structure/software-structure.png  use
-d on input line 124.
+d on input line 126.
 (pdftex.def)             Requested size: 426.79134pt x 274.8559pt.
 
 (c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -392,52 +392,44 @@ File: lstlang2.sty 2015/06/04 1.6 listings language file
 File: lstlang3.sty 2015/06/04 1.6 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 136.
- [2]
-<figures/discrete-algorithms/discrete-algorithms.png, id=83, 284.5029pt x 284.5
-029pt>
+nput line 138.
+ [2] [3 <./figures/software-structure/software-structure.png (PNG copy)>]
+<figures/discrete-algorithms/discrete-algorithms.png, id=112, 284.5029pt x 284.
+5029pt>
 File: figures/discrete-algorithms/discrete-algorithms.png Graphic file (type pn
 g)
 <use figures/discrete-algorithms/discrete-algorithms.png>
 Package pdftex.def Info: figures/discrete-algorithms/discrete-algorithms.png  u
-sed on input line 159.
+sed on input line 161.
 (pdftex.def)             Requested size: 284.5022pt x 284.5022pt.
- [3 <./figures/software-structure/software-structure.png (PNG copy)>] [4 <./fig
-ures/discrete-algorithms/discrete-algorithms.png>]
-<figures/digital-algorithms/digital-algorithms.png, id=135, 426.6339pt x 142.13
+ [4 <./figures/discrete-algorithms/discrete-algorithms.png>]
+<figures/digital-algorithms/digital-algorithms.png, id=140, 426.6339pt x 142.13
 1pt>
 File: figures/digital-algorithms/digital-algorithms.png Graphic file (type png)
 
 <use figures/digital-algorithms/digital-algorithms.png>
 Package pdftex.def Info: figures/digital-algorithms/digital-algorithms.png  use
-d on input line 188.
+d on input line 190.
 (pdftex.def)             Requested size: 426.63284pt x 142.13063pt.
  [5 <./figures/digital-algorithms/digital-algorithms.png>] (./main.bbl [6])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 221.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 223.
  [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 221.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 223.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 221.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 221.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: F5AB98BA760F134AD3F09196E1224318;372
-(rerunfilecheck)             After:  F10624A6675F7757249C28801EDECA7F;376.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 221.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 223.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 223.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: F10624A6675F7757249C28801EDECA7F;376.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 223.
  ) 
 Here is how much of TeX's memory you used:
- 8828 strings out of 492646
- 123171 string characters out of 6133325
- 302805 words of memory out of 5000000
- 12570 multiletter control sequences out of 15000+600000
+ 8832 strings out of 492646
+ 123264 string characters out of 6133325
+ 303892 words of memory out of 5000000
+ 12573 multiletter control sequences out of 15000+600000
  14626 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,10n,42p,1027b,2565s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,10n,42p,1027b,2549s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-di
@@ -451,10 +443,10 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2018/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
 ic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (7 pages, 255121 bytes).
+Output written on main.pdf (7 pages, 256441 bytes).
 PDF statistics:
- 252 PDF objects out of 1000 (max. 8388607)
- 221 compressed objects within 3 object streams
- 62 named destinations out of 1000 (max. 500000)
+ 258 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
  72 words of extra memory for PDF output out of 10000 (max. 10000000)
 

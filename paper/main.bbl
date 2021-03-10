@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{17}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -44,6 +44,11 @@ Klette R, Rosenfeld A (2004) Digital Geometry. Morgan Kaufmann, San Francisco
 Okabe A, Boots B, Sugihara K, Chiu SN (2000) Spatial Tessellations: concepts
   and applications of {Voronoi} diagrams, second edition edition. John Wiley \&
   Sons, Chichester
+
+\bibitem[{{R Core Team}(2019)}]{r-core-team-2019}
+{R Core Team} (2019) R: A Language and Environment for Statistical Computing. R
+  Foundation for Statistical Computing, Vienna, Austria
+\newline\urlprefix\url{https://www.R-project.org/}
 
 \bibitem[{Renka(1997)}]{renka-1997}
 Renka RJ (1997) Algorithm 772: Stripack: Delaunay triangulation and voronoi

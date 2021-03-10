@@ -71,15 +71,17 @@ Computational geometry algorithms and data structures are widely applied across 
 
 \section{Introduction}
 
-Computational geometry seeks to develop algorithms and data structures for geometric objects, and the results are widely applied across numerous scientific domains \citep{de-berg-2008}.  Given the importance of computational geometry it is no surprise that within the \texttt{R} computing ecosystem there are a variety of options for applying various computational geometry algorithms.  However, these packages often work in specific numbers of dimensions, have incompatible data structures, and include additional non-computational geometry functionality that can be domain specific.
+Geometry is an ancient field of study in which geometer examines the distance, shape, size, and position of objects in space \citep{gowers-2003}.  Computational geometry is a more recent field of study that emerged alongside technological developments in computing.  Computational geometry seeks to develop efficient algorithms and data structures for geometric objects, and these algorithms and data structures have been found to be widely applicable across numerous scientific domains \citep{de-berg-2008}.
 
-Our objective in developing the \texttt{compGeometeR} package is to produce a systematic implementation of some of the most commonly used computational geometry algorithms across various of branches of geometry so that they can be easily integrated into domain specific scientific workflows.
+Given the importance of computational geometry it is no surprise that within the \texttt{R} \citep{r-core-team-2019} computing ecosystem there are a variety of options for applying various computational geometry algorithms.  However, these packages often work in specific numbers of dimensions, have incompatible data structures, and include additional non-computational geometry functionality that can be domain specific.
+
+Our objective in developing the \texttt{compGeometeR} (a computational geometer using \texttt{R}) package is to produce a systematic implementation of some of the most commonly used computational geometry algorithms across various of branches of geometry so that they can be easily integrated into domain specific scientific workflows.  Our hope is that by producing \texttt{compGeometeR} we can encourage the use of geometry in \texttt{R} for scientific study.
 
 \section{Algorithms}
 
 There are a variety of computational geometry algorithms available in \texttt{compGeometeR}, some of which are replicated in other \texttt{R} packages.  By documenting these differences (Table \ref{tab:r-options}) we hope to help potential users to assess if \texttt{compGeometeR} is the best option for their needs as there may be other options that are more suitable.
 
-The functions of \texttt{compGeometeR} interconnect and build upon one another, but it is important to recognise that virtually all of the \texttt{compGeometeR} functions are  dependent on computational geometry foundations provided by the \texttt{Qhull} C++ interface software \citep{barber-1996}.
+The functions of \texttt{compGeometeR} interconnect and build upon one another, but it is important to recognise that virtually all of the \texttt{compGeometeR} functions are  dependent on computational geometry foundations provided by the \texttt{Qhull} C++ interface software \citep[\url{http://www.qhull.org/}]{barber-1996}.
 
 % The following table uses formatting fucntions of the booktabs package: https://texdoc.org/serve/booktabs/0
 \begin{table}
@@ -129,7 +131,7 @@ The functions of \texttt{compGeometeR} interconnect and build upon one another, 
 \subsection{Discrete geometry}
 % see: https://en.wikipedia.org/wiki/Discrete_geometry
 
-Discrete geometry studies the shapes and interactions between sets of discrete objects such as points, lines, circles, and polygons in 2-dimensional space.  All of the discrete computational geometry algorithms in \texttt{compGeometeR} take as an input a set of points $P$ in $n$-dimensional Euclidean space $\mathbb{R}^n$.
+Discrete geometry studies the shapes and interactions between sets of discrete objects such as points, lines, circles, and polygons in 2-dimensional Euclidean space -- and the hyperdimensional equivalents of these objects in $n$-dimensional Euclidean space.  All of the discrete computational geometry algorithms in \texttt{compGeometeR} take as an input a set of points $P$ in $n$-dimensional Euclidean space $\mathbb{R}^n$.
 
 A convex hull \citep{barber-1996} defines the smallest subset of $\mathbb{R}^n$ that contains $P$ and for which the subset is convex so any two points within the convex hull can be connected by a straight line also contained by the convex hull (Figure \ref{fig:discrete-algorithms}a).  As an example of the simplicity of \texttt{compGeometeR} a convex hull can be generated and visualised with minimal code (Listing \ref{code:discrete-convex-hull-code}).
 
