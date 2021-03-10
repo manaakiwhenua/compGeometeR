@@ -14,7 +14,7 @@ p = cbind(x, y)
 
 #-------------------------------------------------------------------------------
 
-png("figure-2.png", width = 15, height = 5, res=300, units = "cm", pointsize = 10)
+png("digital-algorithms.png", width = 15, height = 5, res=300, units = "cm", pointsize = 10)
 par(mfrow=c(1,3), oma=c(0,0,0,0), mar=c(0.5,0.5,1.5,0.5))
 cols = c("white", "slateblue", "firebrick", "lightseagreen", "purple", "darkorchid", "dodgerblue",
          "goldenrod", "grey", "deeppink", "turquoise", "yellowgreen", "yellow", "limegreen",

@@ -14,7 +14,7 @@ p = cbind(x, y)
 
 #-------------------------------------------------------------------------------
 
-png("figure-1.png", width = 10, height = 10, res=300, units = "cm", pointsize = 10)
+png("discrete-algorithms.png", width = 10, height = 10, res=300, units = "cm", pointsize = 10)
 par(mfrow=c(2,2), oma=c(0,0,0,0), mar=c(0.5,0.5,1.5,0.5))
 
 # Convex hull

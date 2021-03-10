@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.6.15)  10 MAR 2021 16:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.6.15)  11 MAR 2021 10:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -217,23 +217,65 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+(c:/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count106
+\lst@gtempboxa=\box26
+\lst@token=\toks17
+\lst@length=\count107
+\lst@currlwidth=\dimen130
+\lst@column=\count108
+\lst@pos=\count109
+\lst@lostspace=\dimen131
+\lst@width=\dimen132
+\lst@newlines=\count110
+\lst@lineno=\count111
+\lst@maxwidth=\dimen133
+
+(c:/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count112
+\lst@skipnumbers=\count113
+\lst@framebox=\box27
+)
+(c:/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(c:/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(c:/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -271,17 +313,17 @@ LaTeX Font Info:    ... okay on input line 14.
 
 (c:/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen130
-\scratchbox=\box26
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen131
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks18
+\scratchcounter=\count114
+\scratchdimen=\dimen134
+\scratchbox=\box28
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen135
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks19
 ) (c:/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -299,8 +341,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box27
-Package hyperref Info: Link coloring OFF on input line 14.
+\AtBeginShipoutBox=\box29
+Package hyperref Info: Link coloring OFF on input line 41.
 
 (c:/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -308,60 +350,94 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (c:/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count112
+\c@section@level=\count120
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 33.
+\c@lstlisting=\count121
+LaTeX Font Info:    Try loading font information for U+msa on input line 60.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 33.
+LaTeX Font Info:    Try loading font information for U+msb on input line 60.
 
 (c:/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<figures/figure-1/figure-1.png, id=80, 284.5029pt x 284.5029pt>
-File: figures/figure-1/figure-1.png Graphic file (type png)
-<use figures/figure-1/figure-1.png>
-Package pdftex.def Info: figures/figure-1/figure-1.png  used on input line 108.
+{c:/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<figures/software-structure/software-structure.png, id=50, 2007.5pt x 1292.83pt
+>
+File: figures/software-structure/software-structure.png Graphic file (type png)
 
+<use figures/software-structure/software-structure.png>
+Package pdftex.def Info: figures/software-structure/software-structure.png  use
+d on input line 124.
+(pdftex.def)             Requested size: 426.79134pt x 274.8559pt.
+
+(c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+(c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2015/06/04 1.6 listings language file
+)
+(c:/texlive/2018/texmf-dist/tex/latex/listings/lstlang3.sty
+File: lstlang3.sty 2015/06/04 1.6 listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 136.
+ [2]
+<figures/discrete-algorithms/discrete-algorithms.png, id=83, 284.5029pt x 284.5
+029pt>
+File: figures/discrete-algorithms/discrete-algorithms.png Graphic file (type pn
+g)
+<use figures/discrete-algorithms/discrete-algorithms.png>
+Package pdftex.def Info: figures/discrete-algorithms/discrete-algorithms.png  u
+sed on input line 159.
 (pdftex.def)             Requested size: 284.5022pt x 284.5022pt.
-<figures/figure-2/figure-2.png, id=88, 426.6339pt x 142.131pt>
-File: figures/figure-2/figure-2.png Graphic file (type png)
-<use figures/figure-2/figure-2.png>
-Package pdftex.def Info: figures/figure-2/figure-2.png  used on input line 120.
+ [3 <./figures/software-structure/software-structure.png (PNG copy)>] [4 <./fig
+ures/discrete-algorithms/discrete-algorithms.png>]
+<figures/digital-algorithms/digital-algorithms.png, id=135, 426.6339pt x 142.13
+1pt>
+File: figures/digital-algorithms/digital-algorithms.png Graphic file (type png)
 
+<use figures/digital-algorithms/digital-algorithms.png>
+Package pdftex.def Info: figures/digital-algorithms/digital-algorithms.png  use
+d on input line 188.
 (pdftex.def)             Requested size: 426.63284pt x 142.13063pt.
- [3 <./figures/figure-1/figure-1.png>] [4 <./figures/figure-2/figure-2.png>] (.
-/main.bbl [5])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 151.
- [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 151.
+ [5 <./figures/digital-algorithms/digital-algorithms.png>] (./main.bbl [6])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 221.
+ [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 221.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 151.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 151.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: F5AB98BA760F134AD3F09196E1224318;372.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 151.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 221.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 221.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: F5AB98BA760F134AD3F09196E1224318;372
+(rerunfilecheck)             After:  F10624A6675F7757249C28801EDECA7F;376.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 221.
  ) 
 Here is how much of TeX's memory you used:
- 6025 strings out of 492646
- 88362 string characters out of 6133325
- 190913 words of memory out of 5000000
- 9825 multiletter control sequences out of 15000+600000
- 14458 words of font info for 57 fonts, out of 8000000 for 9000
+ 8828 strings out of 492646
+ 123171 string characters out of 6133325
+ 302805 words of memory out of 5000000
+ 12570 multiletter control sequences out of 15000+600000
+ 14626 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,9n,28p,945b,448s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,10n,42p,1027b,2565s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2018
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2018/texmf-di
@@ -369,15 +445,16 @@ st/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2018/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmr10.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17
-.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/te
-xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/201
-8/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2018/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2018/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (6 pages, 180354 bytes).
+.pfb><c:/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2018/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2018/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/texlive/2018/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmtt12.pfb><c:/texlive/2018/texmf-dist/fonts/type1/publ
+ic/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (7 pages, 255121 bytes).
 PDF statistics:
- 198 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 34 named destinations out of 1000 (max. 500000)
- 67 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 252 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 72 words of extra memory for PDF output out of 10000 (max. 10000000)
 
