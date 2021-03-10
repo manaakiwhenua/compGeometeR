@@ -95,32 +95,32 @@ There are a variety of computational geometry algorithms available in \texttt{co
 
 Discrete geometry studies the shapes and interactions between sets of discrete objects such as points, lines, circles, and polygons in 2-dimensional space.  All of the discrete computational geometry algorithms in \texttt{compGeometeR} take as an input a set of points $P$ in $n$-dimensional Euclidean space $\mathbb{R}^n$.
 
-A convex hull defines the smallest subset of $\mathbb{R}^n$ that contains $P$ and for which the subset is convex so any two points within the convex hull can be connected by a straight line also contained by the convex hull (Figure \ref{fig:euclidean-algorithms}a).
+A convex hull \citep{barber-1996} defines the smallest subset of $\mathbb{R}^n$ that contains $P$ and for which the subset is convex so any two points within the convex hull can be connected by a straight line also contained by the convex hull (Figure \ref{fig:discrete-algorithms}a).
 
-Convex layers were first presented by \cite{huber-1972} and \cite{barnett-1976} who both gave unreferenced credit for this idea to Tukey.  Convex layers are a nested sequence of convex hulls produced by repeating the process of constructing a convex hull for $P$ and then removing the points forming the vertices of the convex hull from $P$ before producing the next convex layer.  The first convex layer is equivalent to the convex hull, with each successive convex layer representing ever smaller region of space (Figure \ref{fig:euclidean-algorithms}b).
+Convex layers were first presented by \cite{huber-1972} and \cite{barnett-1976} who both gave unreferenced credit for this idea to Tukey.  Convex layers are a nested sequence of convex hulls produced by repeating the process of constructing a convex hull for $P$ and then removing the points forming the vertices of the convex hull from $P$ before producing the next convex layer.  The first convex layer is equivalent to the convex hull, with each successive convex layer representing ever smaller region of space (Figure \ref{fig:discrete-algorithms}b).
 
-The Delaunay triangulation \citep{delaunay-1934} produces a set of simplices (triangles in 2-dimensions or tetrahedrons in 3-dimensions) for which no point in $P$ is inside the the circumhypersphere (a circle in 2-dimensions or a sphere in 3-dimensions) of each simplex (Figure \ref{fig:euclidean-algorithms}c).
+The Delaunay triangulation \citep{delaunay-1934} produces a set of simplices (triangles in 2-dimensions or tetrahedrons in 3-dimensions) for which no point in $P$ is inside the the circumhypersphere (a circle in 2-dimensions or a sphere in 3-dimensions) of each simplex (Figure \ref{fig:discrete-algorithms}c).
 
-The alpha complex \citep{edelsbrunner-1994} is a subset of the Delaunay triangulation that contains only those simplices for whose circumhypersphere radius is smaller than a specified $\alpha$ parameter value ranging $0 < \alpha < \infty$ (Figure \ref{fig:euclidean-algorithms}d).
+The alpha complex \citep{edelsbrunner-1994} is a subset of the Delaunay triangulation that contains only those simplices for whose circumhypersphere radius is smaller than a specified $\alpha$ parameter value ranging $0 < \alpha < \infty$ (Figure \ref{fig:discrete-algorithms}d).  The related alpha shape would be a polytope that combines all of the simplices in an alpha complex \citep{edelsbrunner-1994}.
 
 \begin{figure}[ht]
 \centering
 \includegraphics{figures/figure-1/figure-1.png}
 \caption{Two-dimensional examples of discrete geometry algorithms currently available in \texttt{compGeometeR}. (a) Convex hull, (b) convex layers, (c) Delaunay triangulation, and (d) alpha complex.}
-\label{fig:euclidean-algorithms}
+\label{fig:discrete-algorithms}
 \end{figure}
-
 
 \subsection{Digital geometry}
 % see: https://en.wikipedia.org/wiki/Digital_geometry
 
-Digital geometry is a branch of geometry that studies the geometric properties of a grid (or lattice) of points in Euclidean space, and usually involves the digitisation of discrete lines and regions \citep{rosenfeld-1989}.  Digitisation occurs by representing Euclidean space $\mathbb{R}^n$ as a a rectangular orthogonal grid $\mathbb{G}^n$.  The elements of $\mathbb{G}^2$ are called pixels, and the elements of $\mathbb{G}^3$ are called voxels, and each element in $\mathbb{G}^n$ has a grid coordinate for its centre \citep{klette-2004} and a value that denotes if the element belongs to a digitised geometric object, or when required, which part of the digitised geometric object .
+Digital geometry is a branch of geometry that studies the geometric properties of a grid (or lattice) of points in Euclidean space, and usually involves the digitisation of discrete lines and regions \citep{rosenfeld-1989}.  Digitisation occurs by representing Euclidean space $\mathbb{R}^n$ as a a rectangular orthogonal grid $\mathbb{G}^n$.  The elements of $\mathbb{G}^2$ are called pixels, and the elements of $\mathbb{G}^3$ are called voxels, and each element in $\mathbb{G}^n$ has a grid coordinate for its centre \citep{klette-2004} and a value that denotes if the element belongs to a digitised geometric object, or when required, which part of the digitised geometric object.  \texttt{compGeometeR} has implemented digital versions of the convex hull (Figure \ref{fig:digital-algorithms}a), alpha complex (Figure \ref{fig:digital-algorithms}b), and alpha shape (Figure \ref{fig:digital-algorithms}c).
 
-
-
-
-
-
+\begin{figure}[ht]
+\centering
+\includegraphics{figures/figure-2/figure-2.png}
+\caption{Two-dimensional examples of digital geometry algorithms currently available in \texttt{compGeometeR}. (a) Convex hull, (b) alpha complex, and (c) alpha shape.}
+\label{fig:digital-algorithms}
+\end{figure}
 
 \section{Future work}
 
