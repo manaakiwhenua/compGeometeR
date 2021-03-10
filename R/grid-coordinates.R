@@ -1,19 +1,23 @@
 #' @title Grid Coordinates
 #' 
-#' @description This function creates a \code{n}-dimensional grid of coordinates 
+#' @description This function creates a \code{d}-dimensional grid of coordinates 
 #' systematically spaced throughout the specified spatial extent.
 #'
-#' @param mins Vector of length \code{n} listing the point space minimum for each
-#' dimension.
-#' @param maxs Vector of length \code{n} listing the point space maximum for each
-#' dimension.
-#' @param spacings Vector of length \code{n} listing the spacings between points 
-#' in all dimensions.
+#' @param mins Vector of length \code{d} listing the grid coordinate minimum for 
+#' each dimension.
+#' @param maxs Vector of length \code{d} listing the grid coordinate maximum for 
+#' each dimension.
+#' @param spacings Vector of length \code{d} listing the grid coordinate spacing 
+#' for each dimension.
 #'
-#' @return A list of two objects.  The first object is a dataframe with \code{n} 
-#' columns and a row for each coordinate - so potentially lots of rows!  The 
-#' second object is another list of length \code{n} that contains the 
-#' coordinates along each dimension.
+#' @return A list of two objects:
+#' 
+#' \itemize{
+#'   \item A dataframe with \code{d} columns and a row for each grid coordinate 
+#'   - so potentially lots of rows!
+#'   \item A list of length \code{d} that contains the grid coordinates along 
+#'   each dimension.
+#' }
 #'
 #' @examples
 #' # Point space grid coordinates usage
