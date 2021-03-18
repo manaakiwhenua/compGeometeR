@@ -21,14 +21,12 @@ each dimension.}
 for each dimension.}
 }
 \value{
-A list of three objects:
+A list of two objects:
 
 \itemize{
   \item A \eqn{d}-dimensional array containing 1 if a grid coordinate lies 
   within the hull and 0 if it lies outside the hull (if any of the test point 
   coordinates contain NA then the output is 0).
-  \item A dataframe with \code{d} columns and a row for each grid coordinate 
-  - so potentially lots of rows!
   \item A list of length \code{d} that contains the grid coordinates along 
   each dimension.
 }
@@ -44,9 +42,14 @@ This function calculates the digital
 x <- c(30, 70, 20, 50, 40, 70)
 y <- c(35, 80, 70, 50, 60, 20)
 p <- data.frame(x, y)
-# Create digital convex hull and plot
+# Create digital convex hull
 d_ch <- digital_convex_hull(points = p, mins=c(15,15), maxs=c(85,85), spacings=c(0.5,0.5))
-image(x=d_ch[[3]][[1]], y=d_ch[[3]][[2]], z=d_ch[[1]], xlab="x", ylab="y")
+# Unpack the digital convex hull components
+d_ch_array <- d_ch[[1]]
+x_coords <- d_ch[[2]][[1]]
+y_coords <- d_ch[[2]][[2]]
+# Plot the digital convex hull
+image(x=x_coords, y=y_coords, z=d_ch_array, xlab="x", ylab="y")
 points(p, pch = as.character(seq(nrow(p))))
 
 }

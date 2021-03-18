@@ -19,15 +19,13 @@
 #' @param spacings Vector of length \code{d} listing the grid coordinate spacing 
 #' for each dimension.
 #' 
-#' @return A list of three objects:
+#' @return A list of two objects:
 #' 
 #' \itemize{
 #'   \item A \eqn{d}-dimensional array containing an integer index of the alpha 
 #'   complex \eqn{s} \href{https://en.wikipedia.org/wiki/Simplex}{simplex} that 
 #'   each grid coordinate lies within, or 0 if it lies outside the alpha complex 
 #'   (if any of the test point coordinates contain NA then the output is 0).
-#'   \item A dataframe with \code{d} columns and a row for each grid coordinate 
-#'   - so potentially lots of rows!
 #'   \item A list of length \code{d} that contains the grid coordinates along 
 #'   each dimension.
 #' }
@@ -37,10 +35,15 @@
 #' x <- c(30, 70, 20, 50, 40, 70)
 #' y <- c(35, 80, 70, 50, 60, 20)
 #' p <- data.frame(x, y)
-#' # Create digital alpha complex and plot
+#' # Create digital alpha complex
 #' d_ac <- digital_alpha_complex(points = p, alpha = 20, mins=c(15,15), maxs=c(85,85), spacings=c(0.5,0.5))
 #' cols = c("lightgrey", "orange", "purple", "lightseagreen")
-#' image(x=d_ac[[3]][[1]], y=d_ac[[3]][[2]], z=d_ac[[1]], xlab="x", ylab="y", col = cols)
+#' # Unpack the digital alpha complex components
+#' d_ac_array <- d_ac[[1]]
+#' x_coords <- d_ac[[2]][[1]]
+#' y_coords <- d_ac[[2]][[2]]
+#' # Plot the digital convex hull
+#' image(x=x_coords, y=y_coords, z=d_ac_array, xlab="x", ylab="y", col = cols)
 #' points(p, pch = as.character(seq(nrow(p))))
 #' legend("bottomleft", pch=15, col=cols, legend=sort(unique(c(d_ac[[1]]))), title="Simplex")
 #' points(p, pch = as.character(seq(nrow(p))))
@@ -62,7 +65,7 @@ digital_alpha_complex <- function(points=NULL, alpha=Inf, mins, maxs, spacings) 
   # Create an array of the results
   ac_array <- array(m, dim=dim_n)
   
-  return(list(ac_array, cbind(grid[[1]], m), grid[[2]]))
+  return(list(ac_array, grid[[2]]))
   
 }
 
