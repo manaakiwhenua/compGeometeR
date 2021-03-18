@@ -3,44 +3,44 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: landscapeecol.bst
 Database file #1: references.bib
-You've used 17 entries,
+You've used 19 entries,
             2823 wiz_defined-function locations,
-            748 strings with 6859 characters,
-and the built_in function-call counts, 7254 in all, are:
-= -- 746
-> -- 277
-< -- 18
-+ -- 112
-- -- 87
-* -- 568
-:= -- 1348
-add.period$ -- 17
-call.type$ -- 17
-change.case$ -- 113
-chr.to.int$ -- 29
-cite$ -- 17
-duplicate$ -- 283
-empty$ -- 550
-format.name$ -- 126
-if$ -- 1493
+            758 strings with 7086 characters,
+and the built_in function-call counts, 7989 in all, are:
+= -- 815
+> -- 306
+< -- 20
++ -- 123
+- -- 96
+* -- 623
+:= -- 1485
+add.period$ -- 19
+call.type$ -- 19
+change.case$ -- 124
+chr.to.int$ -- 31
+cite$ -- 19
+duplicate$ -- 317
+empty$ -- 614
+format.name$ -- 141
+if$ -- 1646
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 20
-newline$ -- 59
-num.names$ -- 68
-pop$ -- 91
+missing$ -- 24
+newline$ -- 65
+num.names$ -- 76
+pop$ -- 110
 preamble$ -- 1
-purify$ -- 97
+purify$ -- 108
 quote$ -- 0
-skip$ -- 239
+skip$ -- 265
 stack$ -- 0
-substring$ -- 445
-swap$ -- 33
+substring$ -- 467
+swap$ -- 37
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 141
+type$ -- 153
 warning$ -- 0
-while$ -- 65
+while$ -- 71
 width$ -- 0
-write$ -- 192
+write$ -- 212

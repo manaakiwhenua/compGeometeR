@@ -61,7 +61,7 @@
 
 \begin{abstract}
 
-Computational geometry algorithms and data structures are widely applied across numerous scientific domains, and there a variety of \texttt{R} packages that apply computational geometry.  However, these packages often work in specific numbers of dimensions, have incompatible data structures, and include additional non-computational geometry functionality that can be domain specific.  Our objective in developing the \texttt{compGeometeR} package is to produce a systematic implementation of the most commonly used computational geometry algorithms so that they can be easily integrated into domain specific scientific workflows.  We briefly explain the algorithms available in \texttt{compGeometeR}, and identify priorities for future development.
+Computational geometry algorithms and data structures are widely applied across numerous scientific domains, and there a variety of \texttt{R} packages that implement computational geometry functionality.  However, these packages often work in specific numbers of dimensions, do not have directly compatible data structures, and include additional non-computational geometry functionality that can be domain specific.  Our objective in developing the \texttt{compGeometeR} package is to implement in a generic and consistent framework the most commonly used combinatorial computational geometry algorithms so that they can be easily combined and integrated into domain specific scientific workflows.  We briefly explain the discrete and digital combinatorial computational geometry algorithms available in \texttt{compGeometeR}, and identify priorities for future development.
 
 \begin{center}
 \textbf{Keywords}: alpha complex, alpha shape, convex hull, convex layers, Delaunay triangulation, digital, discrete.
@@ -71,23 +71,13 @@ Computational geometry algorithms and data structures are widely applied across 
 
 \section{Introduction}
 
-Geometry is an ancient field of study in which geometer examines the distance, shape, size, and position of objects in space \citep{gowers-2003}.  Computational geometry is a more recent field of study that emerged alongside technological developments in computing. The two main area of computation geometry are algorithmic and Numerical geometry.  The algorithmic geometry seeks to develop efficient algorithms and data structures for geometric objects, and these algorithms and data structures have been found to be widely applicable across numerous scientific domains \citep{de-berg-2008}, while the numerical geometry is aim to represent real-world objects which are suitable for computer computations \citep{kimmel2012numerical}. The algorithmic geometry is made up of the discrete and digital geometry.  The discrete algorithmic geometry study the shape and methods of discrete geometric objects, while the digital algorithmic geometry deals with discrete sets  by studying the geometric properties of a grid (or lattice) of points \citep{boissonnat1998algorithmic}. 
+Geometry is an ancient form of mathematics that enables a geometer to study the distance, shape, size, and position of objects in space \citep{gowers-2003}.  Computational geometry is a more recent field of study that emerged alongside technological developments in computing and seeks to develop efficient algorithms and data structures for geometric objects.  The two main areas of computational geometry are numerical computational geometry that considers continuous geometric objects \citep{kimmel-2012} and combinatorial (or algorithmic) computational geometry that considers discrete geometric objects \citep{boissonnat-1998, de-berg-2008}.
 
+Our focus here is on combinatorial computational geometry, as these algorithms and data structures have been found to be widely applicable across numerous scientific domains \citep{de-berg-2008}.  Given the importance of combinatorial computational geometry it is no surprise that within the \texttt{R} \citep{r-core-team-2019} computing ecosystem there are a variety of options for applying various combinatorial computational geometry algorithms.  However, these algorithms are currently spread across multiple somewhat incompatible packages that often work in specific numbers of dimensions (Table \ref{tab:r-options}) and some include additional non-computational geometry functionality that can be domain specific.  Also, these packages contain only one type of combinatorial computational geometry algorithm, those based on discrete objects such as points, lines, polygons.  But other forms of combinatorial computational geometry such as digital geometry that studies the geometric properties of a grid (or lattice) of points \citep{rosenfeld-1989, klette-2004} would be a useful addition to the \texttt{R} language.
 
-Given the importance of computational algorithmic geometry it is no surprise that within the \texttt{R} \citep{r-core-team-2019} computing ecosystem there are a variety of options for applying various computational geometry algorithms.  However, these packages often work in specific numbers of dimensions, have incompatible data structures, and include additional non-computational geometry functionality that can be domain specific. Also, these packages contains only one type of computational geometry algorithmic, which is the discreet geometry. The digital part of the computational geometry algorithmic are usually not included  and it is up to the user to further derived the needed data from the output of the discreet geometry (see Table \ref{tab:r-options}).
+Our objective in developing the \texttt{compGeometeR} (a computational geometer using \texttt{R}!) package is to produce a systematic implementation of some of the more commonly used discrete and digital combinatorial computational geometry algorithms so that they can be easily integrated into domain specific scientific workflows.  Our hope is that by producing \texttt{compGeometeR} we can encourage the use of geometry in \texttt{R} for scientific study.
 
-Our objective in developing the \texttt{compGeometeR} (a computational geometer using \texttt{R}) package is to produce a systematic implementation of some of the most commonly used computational geometry algorithms (Discrete and Digital) across various of branches of geometry so that they can be easily integrated into domain specific scientific workflows.  Our hope is that by producing \texttt{compGeometeR} we can encourage the use of geometry in \texttt{R} for scientific study.
-
-\section{Algorithms}
-
-There are a variety of computational geometry algorithms available in \texttt{compGeometeR}, some of which are also available in other \texttt{R} packages.  By documenting these differences (Table \ref{tab:r-options}) we hope to help potential users to assess if \texttt{compGeometeR} is the best option for their needs as there may be other options that are more suitable.
-
-The functions of \texttt{compGeometeR} interconnect and build upon one another, but it is important to recognise that virtually all of the \texttt{compGeometeR} functions are  dependent on computational geometry foundations provided by the \texttt{Qhull} C++ interface software \citep[\url{http://www.qhull.org/}]{barber-1996}. Next, we introduce the discrete and digital algorithms included in  \texttt{compGeometeR}
-
- 
-
-
-% The following table uses formatting fucntions of the booktabs package: https://texdoc.org/serve/booktabs/0
+% The following table uses formatting functions of the booktabs package: https://texdoc.org/serve/booktabs/0
 \begin{table}
 \small
 \centering
@@ -105,17 +95,17 @@ The functions of \texttt{compGeometeR} interconnect and build upon one another, 
    & \rotatebox{90}{\texttt{tripack} (1.3-9.1)} \\
 
   \cmidrule{1-9} 
-  Discrete geometry		&     &   &     &   &   &     &   &   \\
+  Discrete algorithms       &     &   &     &   &   &     &   &   \\
   \cmidrule{1-9} 
   Alpha complex				& $n$ &   &     &   &   &     &   &   \\
   Alpha shape				&     &   &  2  & 3 &   &     &   &   \\
   Convex hull  				& $n$ & 2 &     &   &   & $n$ & 2 & 2 \\
   Convex layers				& $n$ &   &     &   &   &     &   &   \\
   Delaunay triangulation	& $n$ &   &  2  &   & 2 & $n$ & 2 & 2 \\
-  Voronoi diagram			&     &   &  2  &   & 2 &  & 2 & 2 \\
+  Voronoi diagram			&     &   &  2  &   & 2 &     & 2 & 2 \\
   
   \cmidrule{1-9} 
-  Digital geometry			&     &   &     &   &   &     &   &   \\
+  Digital algorithms     	&     &   &     &   &   &     &   &   \\
   \cmidrule{1-9} 
   Alpha complex				& $n$ &   &     &   &   &     &   &   \\
   Alpha shape				& $n$ &   &     &   &   &     &   &   \\
@@ -125,17 +115,22 @@ The functions of \texttt{compGeometeR} interconnect and build upon one another, 
 \label{tab:r-options}
 \end{table}
 
-\begin{figure}[ht]
+\section{Algorithms}
+
+The algorithms of \texttt{compGeometeR} that are described in the following sections can be grouped into discrete algorithms and digital algorithms (Table \ref{tab:r-options}), and the functions of \texttt{compGeometeR} that implement both kinds of algorithms have been specifically designed to easily interconnect and build upon one another (Figure \ref{fig:software-structure}).  While some of the \texttt{compGeometeR} code is new, it is important to recognise that virtually all of the \texttt{compGeometeR} functions are  dependent on computational geometry foundations provided by the \texttt{Qhull} C++ interface software \citep[\url{http://www.qhull.org/}]{barber-1996} (Figure \ref{fig:software-structure}).
+
+It is also important to note that while \texttt{compGeometeR}'s digital algorithms are unique to \texttt{R}, some of the discrete algorithms available in \texttt{compGeometeR} are also available in other \texttt{R} packages (Table \ref{tab:r-options}).  By documenting these similarities and differences we hope to help potential users to assess if \texttt{compGeometeR} is the best option for their needs as there may be other options that are more suitable.
+
+\begin{figure}[t]
 \centering
-\includegraphics[width=15cm]{figures/software-structure/software-structure_arrow_to_be_remove.png}
+\includegraphics[width=15cm]{figures/software-structure/software-structure.png}
 \caption{Connections and dependencies of the \texttt{compGeometeR} functions.}
 \label{fig:software-structure}
 \end{figure}
 
-\subsection{Discrete geometry}
-% see: https://en.wikipedia.org/wiki/Discrete_geometry
+\subsection{Discrete algorithms}
 
-Discrete geometry studies the shapes and interactions between sets of discrete objects such as points, lines, circles, and polygons in 2-dimensional Euclidean space -- and the hyperdimensional equivalents of these objects in $n$-dimensional Euclidean space.  All of the discrete computational geometry algorithms in \texttt{compGeometeR} take as an input a set of points $P$ in $n$-dimensional Euclidean space $\mathbb{R}^n$.
+The discrete combinatorial computational geometry algorithms calculate the shapes and interactions between sets of discrete objects such as points, lines, circles, and polygons in 2-dimensional Euclidean space -- and the hyperdimensional equivalents of these objects in $n$-dimensional Euclidean space.  All of the discrete algorithms in \texttt{compGeometeR} take as an input a set of points $P$ in $n$-dimensional Euclidean space $\mathbb{R}^n$.
 
 A convex hull \citep{barber-1996} defines the smallest subset of $\mathbb{R}^n$ that contains $P$ and for which the subset is convex so any two points within the convex hull can be connected by a straight line also contained by the convex hull (Figure \ref{fig:discrete-algorithms}a).  As an example of the simplicity of \texttt{compGeometeR} a convex hull can be generated and visualised with minimal code (Listing \ref{code:discrete-convex-hull-code}).
 
@@ -156,7 +151,7 @@ points(p, pch=16, cex=0.75)
 
 Convex layers were first presented by \cite{huber-1972} and \cite{barnett-1976} who both gave unreferenced credit for this idea to Tukey.  Convex layers are a nested sequence of convex hulls produced by repeating the process of constructing a convex hull for $P$ and then removing the points forming the vertices of the convex hull from $P$ before producing the next convex layer.  The first convex layer is equivalent to the convex hull, with each successive convex layer representing ever smaller region of space (Figure \ref{fig:discrete-algorithms}b).
 
-The Delaunay triangulation \citep{delaunay-1934} produces a set of simplices (triangles in 2-dimensions or tetrahedrons in 3-dimensions) for which no point in $P$ is inside the the circumhypersphere (a circle in 2-dimensions or a sphere in 3-dimensions) of each simplex (Figure \ref{fig:discrete-algorithms}c).
+The Delaunay triangulation \citep{delaunay-1934} produces a set of simplices (triangles in 2-dimensions or tetrahedrons in 3-dimensions) for which no point in $P$ is inside the circumhypersphere (a circle in 2-dimensions or a sphere in 3-dimensions) of each simplex (Figure \ref{fig:discrete-algorithms}c).
 
 The alpha complex \citep{edelsbrunner-1994} is a subset of the Delaunay triangulation that contains only those simplices for whose circumhypersphere radius is smaller than a specified $\alpha$ parameter value ranging $0 < \alpha < \infty$ (Figure \ref{fig:discrete-algorithms}d).  The related alpha shape would be a polytope that combines all of the simplices in an alpha complex \citep{edelsbrunner-1994}.
 
@@ -167,12 +162,11 @@ The alpha complex \citep{edelsbrunner-1994} is a subset of the Delaunay triangul
 \label{fig:discrete-algorithms}
 \end{figure}
 
-\subsection{Digital geometry}
-% see: https://en.wikipedia.org/wiki/Digital_geometry
+\subsection{Digital algorithms}
 
-Digital geometry is a branch of geometry that studies the geometric properties of a grid (or lattice) of points in Euclidean space, and usually involves the digitisation of discrete lines and regions \citep{rosenfeld-1989}.  Digitisation occurs by representing Euclidean space $\mathbb{R}^n$ as a  rectangular orthogonal grid $\mathbb{G}^n$.  The elements of $\mathbb{G}^2$ are called pixels, and the elements of $\mathbb{G}^3$ are called voxels, and each element in $\mathbb{G}^n$ has a grid coordinate for its centre \citep{klette-2004} and a value that denotes if the element belongs to a digitised geometric object, or when required, which part of the digitised geometric object.  \texttt{compGeometeR} has implemented digital versions of the convex hull (Figure \ref{fig:digital-algorithms}a), alpha complex (Figure \ref{fig:digital-algorithms}b), and alpha shape (Figure \ref{fig:digital-algorithms}c) that are unique functions amongst \texttt{R} software (Table \ref{tab:r-options}).
+The digital combinatorial computational geometry algorithms calculate the geometric properties of a grid (or lattice) of points in Euclidean space, and usually involves the digitisation of discrete geometric objects \citep{rosenfeld-1989}.  Digitisation occurs by representing Euclidean space $\mathbb{R}^n$ as a rectangular orthogonal grid $\mathbb{G}^n$.  The elements of $\mathbb{G}^2$ are called pixels, and the elements of $\mathbb{G}^3$ are called voxels, and each element in $\mathbb{G}^n$ has a grid coordinate for its centre \citep{klette-2004} and a value that denotes if the element belongs to a digitised geometric object, or when required, which part of the digitised geometric object.  \texttt{compGeometeR} has implemented digital versions of the convex hull (Figure \ref{fig:digital-algorithms}a), alpha complex (Figure \ref{fig:digital-algorithms}b), and alpha shape (Figure \ref{fig:digital-algorithms}c) that are unique functions amongst \texttt{R} software (Table \ref{tab:r-options}).
 
-The code required for digital versions of the discrete algorithms is no more complicated, and simply requires additional parameters to define the extent and resolution of $\mathbb{G}^n$.  For example, the code required for a digital convex hull (Listing \ref{code:digital-convex-hull-code}) does not differ much from that required for a discrete convex hull (Listing \ref{code:discrete-convex-hull-code}).
+The code required for digital versions of the discrete algorithms is only slightly more complex, and simply requires additional parameters to define the extent and resolution of $\mathbb{G}^n$.  For example, the code required for a digital convex hull (Listing \ref{code:digital-convex-hull-code}) does not differ much from that required for a discrete convex hull (Listing \ref{code:discrete-convex-hull-code}).
 
 \begin{lstlisting}[language=R, caption=Example \texttt{R} code to create a digital convex hull with \texttt{compGeometeR}, label={code:digital-convex-hull-code}]
 library(compGeometeR)
@@ -198,21 +192,21 @@ points(p, pch=16, cex=0.75)
 
 \section{Future work}
 
-\texttt{compGeometeR} is very much a work in progress, and while there is sufficient functionality for it to be of wide use in the computational sciences, there is some functionality that has been identified as being particularly useful for future development.
+\texttt{compGeometeR} is very much a work in progress, and while there is already sufficient functionality for \texttt{compGeometeR} to be useful in a wide range of computational sciences, there is some functionality that has been identified as being particularly useful for future development.
 
-The Voronoi diagram \citep{voronoi-1908, okabe-2000} partitions $n$-dimensional space into a set of polytopes for which each polytope delineates the region of $n$-dimensional space that is closest to each point in $P$.  The Voronoi diagram would be an obvious addition for the discrete geometry algorithms given its lack of implementation in other R geometry packages (see Table \ref{tab:r-options}).
+The Voronoi diagram \citep{voronoi-1908, okabe-2000} partitions $n$-dimensional space into a set of polytopes for which each polytope delineates the region of $n$-dimensional space that is closest to each point in $P$.  The Voronoi diagram would be an obvious addition for the discrete geometry algorithms given a 2-dimensional version has been implemented in other \texttt{R} geometry packages but no $n$-dimensional version is available (Table \ref{tab:r-options}).
 
 As well as expanding the number of discrete geometry algorithms, and implementing more discrete algorithms in digital form, there are other kinds of computational geometry algorithms that we think would be of particular value.
 
 There are a variety of useful graph structures that can be produced based on geometric principles.  For example, the Delaunay triangulation \citep{delaunay-1934} can also be represented as a graph structure, and for which there are several useful subgraphs such as the Gabriel graph \citep{gabriel-1969}, Urquhart graph \citep{urquhart-1980}, and relative neighbourhood graph \citep{toussaint-1980}.
 
-In some contexts it will be important to recognise that there is uncertainty in the position of points in space and the parameters defining a given algorithm.  In such situations it may be helpful to adopt fuzzy geometry \citep{rosenfeld-1998} view in which, foe example, memberships of points in space are not crisp being either 0 or 1, but rather are fuzzy on a scale from 0 to 1.  Creating fuzzy versions of the \texttt{compGeometeR} algorithms could result in very useful functionality where quantifying uncertainty of any computational geometry is important.  The existing digital geometric algorithms could be easily extended to fuzzy forms as all that is required is to assign a membership value to each pixel \citep{klette-2004}.
+In some contexts it will be important to recognise that there is uncertainty in the position of points in space and the parameters defining a given algorithm.  In such situations it may be helpful to adopt fuzzy geometry \citep{rosenfeld-1998} view in which, for example, memberships of points in space are not crisp being either 0 or 1, but rather are fuzzy on a scale from 0 to 1.  Creating fuzzy versions of the \texttt{compGeometeR} algorithms could result in very useful functionality where quantifying uncertainty of any computational geometry is important.  The existing digital geometric algorithms could be easily extended to fuzzy forms as all that is required is to assign a membership value to each pixel \citep{klette-2004}.
 
-All the algorithms in \texttt{compGeometeR} work in Euclidean space, but computational geometry algorithms can also be usefully applied in spherical or hyperbolic space \citep{gowers-2003}.  For example, the Fortran \texttt{STRIPACK} software \citep{renka-1997} could be wrapped by R to provide functionality to compute Delaunay triangulations and Voronoi diagrams on the surface of a sphere.
+All the algorithms in \texttt{compGeometeR} work in Euclidean space, but computational geometry algorithms can also be usefully applied in spherical or hyperbolic space \citep{gowers-2003}.  For example, the Fortran \texttt{STRIPACK} software \citep{renka-1997} could be wrapped by \texttt{R} to provide functionality to compute Delaunay triangulations and Voronoi diagrams on the surface of a sphere.
 
 \section{Software availability}
 
-\texttt{compGeometeR} is open source software made available under a General Public License license. Installation instructions can be found at the GitHub repository \url{https://github.com/manaakiwhenua/compGeometeR}.
+\texttt{compGeometeR} is open source software made available under a General Public License. Installation instructions can be found at the GitHub repository \url{https://github.com/manaakiwhenua/compGeometeR}.
 
 We are also developing a cookbook of examples of \texttt{compGeometeR} use via the GitHub repository wiki \url{https://github.com/manaakiwhenua/compGeometeR/wiki}.
 

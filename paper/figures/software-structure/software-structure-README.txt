@@ -1,0 +1,1 @@
+To open or modify the software-structure.graphml file use the freely available yEd Graph Editor software https://www.yworks.com/products/yed.

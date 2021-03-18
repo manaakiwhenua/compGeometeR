@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{19}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname url\endcsname\relax
   \def\url#1{\texttt{#1}}\fi
@@ -12,9 +12,13 @@ Barber CB, Dobkin DP, Huhdanpaa H (1996) The {Quickhull} algorithm for convex
 Barnett V (1976) The ordering of multivariate data. Journal of the Royal
   Statistical Society. Series A 139: 318--355
 
-\bibitem[{de~Berg et~al.(2008)de~Berg, Cheong, van Kreveld, and
+\bibitem[{Boissonnat and Yvinec(1998)}]{boissonnat-1998}
+Boissonnat JD, Yvinec M (1998) Algorithmic Geometry. Cambridge University
+  Press, Cambridge
+
+\bibitem[{De~Berg et~al.(2008)De~Berg, Cheong, van Kreveld, and
   Overmars}]{de-berg-2008}
-de~Berg M, Cheong O, van Kreveld M, Overmars M (2008) Computational Geometry,
+De~Berg M, Cheong O, van Kreveld M, Overmars M (2008) Computational Geometry,
   3rd edition. Springer, Berlin
 
 \bibitem[{Delaunay(1934)}]{delaunay-1934}
@@ -37,6 +41,10 @@ Gowers T (2003) Mathematics: a very short introduction. Oxford University
 Huber PJ (1972) Robust statistics: a review. The Annals of Mathematical
   Statistics 43: 1041--1067
 
+\bibitem[{Kimmel(2012)}]{kimmel-2012}
+Kimmel R (2012) Numerical geometry of images: Theory, algorithms, and
+  applications. Springer-Verlag, New York
+
 \bibitem[{Klette and Rosenfeld(2004)}]{klette-2004}
 Klette R, Rosenfeld A (2004) Digital Geometry. Morgan Kaufmann, San Francisco
 
@@ -51,9 +59,9 @@ Okabe A, Boots B, Sugihara K, Chiu SN (2000) Spatial Tessellations: concepts
 \newline\urlprefix\url{https://www.R-project.org/}
 
 \bibitem[{Renka(1997)}]{renka-1997}
-Renka RJ (1997) Algorithm 772: Stripack: Delaunay triangulation and voronoi
-  diagram on the surface of a sphere. ACM Transactions on Mathematical Software
-  23: 416--434
+Renka RJ (1997) Algorithm 772: {STRIPACK}: {Delaunay} triangulation and
+  {Voronoi} diagram on the surface of a sphere. ACM Transactions on
+  Mathematical Software 23: 416--434
 
 \bibitem[{Rosenfeld(1998)}]{rosenfeld-1998}
 Rosenfeld A (1998) Fuzzy geometry an updated overview. Information Sciences
