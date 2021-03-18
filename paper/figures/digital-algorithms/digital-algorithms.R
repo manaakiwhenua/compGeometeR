@@ -22,21 +22,25 @@ cols = c("white", "slateblue", "firebrick", "lightseagreen", "purple", "darkorch
 
 # Digital convex hull
 d_ch = digital_convex_hull(p, mins=c(0,5), maxs=c(15,15), spacings = c(0.05,0.05))
-image(x=d_ch[[3]][[1]], y=d_ch[[3]][[2]], z=d_ch[[1]], 
+# Unpack the digital convex hull components and plot
+d_ch_array <- d_ch[[1]]
+x_coords <- d_ch[[2]][[1]]
+y_coords <- d_ch[[2]][[2]]
+image(x=x_coords, y=y_coords, z=d_ch_array, 
       yaxt="n", xaxt="n", xlab="", ylab = "", col=c("white", "orange"))
 points(p, pch=16, cex=0.75)
 mtext("(a)", side = 3, line=0.25)
 
 # Digital alpha complex
 d_ac = digital_alpha_complex(p, alpha = 2, mins=c(0,5), maxs=c(15,15), spacings = c(0.05,0.05))
-image(x=d_ac[[3]][[1]], y=d_ac[[3]][[2]], z=d_ac[[1]]+1, 
+image(x=d_ac[[2]][[1]], y=d_ac[[2]][[2]], z=d_ac[[1]]+1, 
       yaxt="n", xaxt="n", xlab="", ylab = "", col=cols)
 points(p, pch=16, cex=0.75)
 mtext("(b)", side = 3, line=0.25)
 
 # Digital alpha shape
 d_as = digital_alpha_shape(p, alpha = 2, mins=c(0,5), maxs=c(15,15), spacings = c(0.05,0.05))
-image(x=d_as[[3]][[1]], y=d_as[[3]][[2]], z=d_as[[1]], 
+image(x=d_as[[2]][[1]], y=d_as[[2]][[2]], z=d_as[[1]], 
       yaxt="n", xaxt="n", xlab="", ylab = "", col=c("white", "orange"))
 points(p, pch=16, cex=0.75)
 mtext("(c)", side = 3, line=0.25)

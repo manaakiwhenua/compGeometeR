@@ -134,7 +134,7 @@ The discrete combinatorial computational geometry algorithms calculate the shape
 
 A convex hull \citep{barber-1996} defines the smallest subset of $\mathbb{R}^n$ that contains $P$ and for which the subset is convex so any two points within the convex hull can be connected by a straight line also contained by the convex hull (Figure \ref{fig:discrete-algorithms}a).  As an example of the simplicity of \texttt{compGeometeR} a convex hull can be generated and visualised with minimal code (Listing \ref{code:discrete-convex-hull-code}).
 
-\begin{lstlisting}[language=R, caption=Example \texttt{R} code to create a discrete convex hull with \texttt{compGeometeR}, label={code:discrete-convex-hull-code}]
+\begin{lstlisting}[language=R, caption=Example \texttt{R} code to create a discrete convex hull (Figure \ref{fig:discrete-algorithms}a) with \texttt{compGeometeR}, label={code:discrete-convex-hull-code}]
 library(compGeometeR)
 # Generate point data
 set.seed(2) # to reproduce figure exactly
@@ -168,7 +168,7 @@ The digital combinatorial computational geometry algorithms calculate the geomet
 
 The code required for digital versions of the discrete algorithms is only slightly more complex, and simply requires additional parameters to define the extent and resolution of $\mathbb{G}^n$.  For example, the code required for a digital convex hull (Listing \ref{code:digital-convex-hull-code}) does not differ much from that required for a discrete convex hull (Listing \ref{code:discrete-convex-hull-code}).
 
-\begin{lstlisting}[language=R, caption=Example \texttt{R} code to create a digital convex hull with \texttt{compGeometeR}, label={code:digital-convex-hull-code}]
+\begin{lstlisting}[language=R, caption=Example \texttt{R} code to create a digital convex hull (Figure \ref{fig:digital-algorithms}a) with \texttt{compGeometeR}, label={code:digital-convex-hull-code}]
 library(compGeometeR)
 # Generate point data
 set.seed(2) # to reproduce figure exactly
@@ -177,8 +177,11 @@ y = rnorm(n = 20, mean = 10, sd = 2)
 p = cbind(x, y)
 # Create digital convex hull
 d_ch = digital_convex_hull(p, mins=c(0,5), maxs=c(15,15), spacings = c(0.05,0.05))
-# Plot point data and digital convex hull
-image(x=d_ch[[3]][[1]], y=d_ch[[3]][[2]], z=d_ch[[1]], 
+# Unpack the digital convex hull components and plot
+d_ch_array <- d_ch[[1]]
+x_coords <- d_ch[[2]][[1]]
+y_coords <- d_ch[[2]][[2]]
+image(x=x_coords, y=y_coords, z=d_ch_array, 
       yaxt="n", xaxt="n", xlab="", ylab = "", col=c("white", "orange"))
 points(p, pch=16, cex=0.75)
 \end{lstlisting}
