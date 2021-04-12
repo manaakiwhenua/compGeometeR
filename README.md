@@ -2,18 +2,9 @@
 
 # compGeometeR
 
-`compGeometeR` aims to implement commonly used computational geometry algorithms in `R`.  We believed that by implementing these algorithms within a single unified framework an `R` user could easily apply these algorithms in solving spatial problems in a variety of different domains, and we are building a [`compGeometeR` cookbook](https://github.com/manaakiwhenua/compGeometeR/wiki) that illustrates various use cases.
+`compGeometeR` aims to implement commonly used computational geometry algorithms in `R`.  We believed that by implementing these algorithms within a single unified framework an `R` user could easily apply these algorithms in solving spatial problems in a variety of different domains, and we are building a [`compGeometeR` cookbook](https://github.com/manaakiwhenua/compGeometeR/wiki) that illustrates various use cases and provides advice for plotting and efficient computation.
 
-`compGeometeR` is built using the [Qhull library](http://www.qhull.org/) and the computational geometry algorithms available in `compGeometeR` and the number of dimensions in which they work are shown in the table below along with a variety of other `R` packages that we are aware of that also implement computational geometry algorithms.  By documenting these differences we hope to help users to assess if `compGeometeR` is the best option for their needs.
-
-|                                                                                | `compGeometeR`  | `R` | `geometry`  | `deldir` | `spatstat` | `tripack` | `alphahull` | `alphashape3d` |
-| ------------------------------------------------------------------------------ | --------------- | --- | ----------- | -------- | ---------- | --------- | ----------- | -------------- |
-| [Convex hull](https://en.wikipedia.org/wiki/Convex_hull)                       | _n_             | 2   | _n_         |          | 2          | 2         |             |                |
-| [Convex layers](https://en.wikipedia.org/wiki/Convex_layers)                   | _n_             |     |             |          |            |           |             |                |
-| [Delaunay triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation) | _n_             |     | _n_         | 2        | 2          | 2         | 2           |                |
-| [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram)               |                 |     | _n_         | 2        | 2          | 2         | 2           |                |
-| [Alpha complex](https://en.wikipedia.org/wiki/Alpha_shape#Alpha_complex)       | _n_             |     |             |          |            |           |             |                |
-| [Alpha shape](https://en.wikipedia.org/wiki/Alpha_shape)                       |                 |     |             |          |            |           | 2           | 3              |
+You can read more about the design of `compGeometeR`, what algorithms are available, and some simple examples of use in the [`compGeometeR` preprint](https://osf.io/b4zvr/) software paper.
 
 ## Installation
 
@@ -36,13 +27,25 @@ devtools::install_git("https://github.com/manaakiwhenua/compGeometeR")
 
 ## Citation
 
+If you make use of `compGeometeR`, we would really appreciate it if you could cite the [`compGeometeR` preprint](https://osf.io/b4zvr/) software paper:
 
+Etherington TR, Omondiagbe OP (2021) compGeometeR: an R package for computational geometry. OSF Preprints, doi:[10.31219/osf.io/b4zvr](https://doi.org/10.31219/osf.io/b4zvr).
+
+However, as `compGeometeR` is built upon and is dependant on the [Qhull library](http://www.qhull.org/) that has also been published:
+
+Barber CB, Dobkin DP, Huhdanpaa H (1996) The Quickhull algorithm for convex hulls. ACM Transactions on Mathematical Software 22: 469-483, doi:[10.1145/235815.235821](https://dl.acm.org/doi/10.1145/235815.235821).
+
+we think it is only fair that this work is cited too, so we would suggest including a statement such as the following in any published work:
+
+"[we did some computational geometry analysis ...] using the R package `compGeometeR` (Barber *et al*. 1996, Etherington and Omondiagbe 2021)"
 
 ## Community Guidelines
 
 To report bugs or request extra functionality please use log an [issue](https://github.com/manaakiwhenua/compGeometeR/issues) to get in touch.
 
 We would also welcome contributions to `compGeometeR` from people who would like to join the development team.  We would ask that you first open an [issue](https://github.com/manaakiwhenua/compGeometeR/issues) to suggest an enhancement to be sure it is within scope of the project before forking the repository and issuing a pull request.
+
+Our intention is that as people help to refine, fix, or add functionality to `compGeometeR` we will include these people as co-authors on the project, and will release a new version of the software paper preprint that includes these people as co-authors so that they too can get credit for their efforts.
 
 ## Local Development
 
