@@ -1,0 +1,19 @@
+Package: compGeometeR
+Type: Package
+Title: Computational Geometry Algorithms
+Version: 1.0
+Date: 2020-05-15
+Authors@R: c(
+    person("O. Pascal", "Omondiagbe" , role=c("aut","cre"), email="omondiagbep@landcareresearch.co.nz"),
+    person("Thomas R.", "Etherington", role=c("aut"), email="etheringtont@landcareresearch.co.nz"))
+Maintainer: O. Pascal Omondiagbe <omondiagbep@landcareresearch.co.nz>
+Description: Computational Geometry Algorithms for use in R 
+License: GPU
+Depends: R (>= 3.5.1)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Suggests: 
+   testthat
+NeedsCompilation: no
+Packaged: 2022-05-20 22:10:32 UTC; Pas
