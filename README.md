@@ -20,10 +20,11 @@ Install `compGeometeR` from GitHub:
 ```r
 devtools::install_git("https://github.com/manaakiwhenua/compGeometeR",subdir = "package")
 ```
+Please note that `devtools` may require you to install `RTools`, and to install `compGeometeR` from GitHub may require you to install `Git`.
 
 ## Dependencies
 
-`compGeometeR` depends on the `devtools` package and was developed using `R` version 3.5.1.
+`compGeometeR` has no package dependencies and was developed using `R` version 3.5.1.
 
 ## Citation
 
