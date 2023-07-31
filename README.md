@@ -18,7 +18,7 @@ install.packages("devtools")
 Install `compGeometeR` from GitHub:
 
 ```r
-devtools::install_git("https://github.com/manaakiwhenua/compGeometeR")
+devtools::install_git("https://github.com/manaakiwhenua/compGeometeR",subdir = "package")
 ```
 
 ## Dependencies
@@ -85,8 +85,8 @@ The `make` file is the easier way to rebuild and install the package, this is be
 To build and install using the `R` and `devtools`, you have to make sure you `make` install on your system.  Once you have follow the instruction given above to install `make`, then run the following:
 
  * `roxygen2::roxygenise()` to regenrate the documentation
- * `devtools::build()` to build
- * `devtools::install` or `devtools::install(args = c("--no-multiarch"))` to install depending on your architecture
+ * `devtools::build("package")` to build
+ * `devtools::install("package")` or `devtools::install("package",args = c("--no-multiarch"))` to install depending on your architecture
 
 ### Generating Package PDF
 
