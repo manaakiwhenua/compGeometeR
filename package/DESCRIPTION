@@ -8,11 +8,11 @@ Authors@R: c(
     person("Thomas R.", "Etherington", role=c("aut"), email="etheringtont@landcareresearch.co.nz"))
 Maintainer: O. Pascal Omondiagbe <omondiagbep@landcareresearch.co.nz>
 Description: Computational Geometry Algorithms for use in R 
-License: GPU
+License: GPL (>= 3)
 Depends: R (>= 3.5.1)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.1
 Suggests: 
    testthat
 NeedsCompilation: no
