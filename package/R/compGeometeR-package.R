@@ -1,4 +1,5 @@
 #' @keywords internal
+#' @useDynLib compGeometeR
 "_PACKAGE"
 
 ## usethis namespace: start
