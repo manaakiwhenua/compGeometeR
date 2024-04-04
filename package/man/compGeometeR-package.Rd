@@ -4,17 +4,9 @@
 \name{compGeometeR-package}
 \alias{compGeometeR}
 \alias{compGeometeR-package}
-\title{compGeometeR: Computational Geometry Algorithms}
+\title{compGeometeR: Computational Geometry Algorithms for use in R}
 \description{
-Computational Geometry Algorithms for use in R
-}
-\seealso{
-Useful links:
-\itemize{
-  \item \url{https://github.com/manaakiwhenua/compGeometeR}
-  \item Report bugs at \url{https://github.com/manaakiwhenua/compGeometeR/issues}
-}
-
+Package provides R bindings for the QHull library of computational geometry algorithms.
 }
 \author{
 \strong{Maintainer}: O. Pascal Omondiagbe \email{omondiagbep@landcareresearch.co.nz}

@@ -48,7 +48,13 @@ x <- c(30, 70, 20, 50, 40, 70)
 y <- c(35, 80, 70, 50, 60, 20)
 p <- data.frame(x, y)
 # Create digital alpha shape
-d_as <- digital_alpha_shape(points = p, alpha = 20, mins=c(15,15), maxs=c(85,85), spacings=c(0.5,0.5))
+d_as <- digital_alpha_shape(
+		points = p,
+		alpha = 20,
+		mins=c(15,15),
+		maxs=c(85,85),
+		spacings=c(0.5,0.5)
+   )
 # Unpack the digital alpha shape components
 d_as_array <- d_as[[1]]
 x_coords <- d_as[[2]][[1]]
