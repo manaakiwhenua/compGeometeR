@@ -19,7 +19,7 @@
 #include <Rinternals.h>
 #include "qhull_ra.h"
 
-
+FILE * tmpstdout;
 
 void freeQhull(qhT *qh) {
   int curlong, totlong;
