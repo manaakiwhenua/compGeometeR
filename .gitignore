@@ -5,6 +5,7 @@
 .cproject
 .Rbuildignore
 .project
+.vscode
 Debug/
 package/src-i386
 .settings
