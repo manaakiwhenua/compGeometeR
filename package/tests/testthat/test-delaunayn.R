@@ -17,7 +17,13 @@ test_that("delaunayn should return an error when the the input has NAs", {
 test_that("A square is triangulated", {
   ## This doesn't work if the Qz option isn't supplied
   square <- rbind(c(0, 0), c(0, 1), c(1, 0), c(1, 1))
-  expect_equal(delaunay (square), rbind(c(4, 2, 1),
-                                        c(4, 3, 1)))
+
+  triangulation <- delaunay(square)
+
+  expect_equal(triangulation$input_points, square)
+  expect_equal(triangulation$simplices, rbind(c(4, 2, 1), c(3, 4, 1)))
+  expect_equal(triangulation$simplex_neighs[[1]], 2)
+  expect_equal(triangulation$simplex_neighs[[2]], 1)
+
   expect_error(delaunay(square, ""))
 })
