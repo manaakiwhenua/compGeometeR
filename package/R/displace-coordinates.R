@@ -30,6 +30,7 @@
 #'  points(u_boot, pch=4, col=cols, cex=0.5)
 #' }
 #' 
+#' @importFrom stats complete.cases runif
 #' @export
 displace_coordinates <- function(points=NULL, displace) {
 

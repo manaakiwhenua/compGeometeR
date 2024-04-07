@@ -58,7 +58,7 @@
 digital_alpha_complex <- function(points=NULL, alpha=Inf, mins, maxs, spacings) {
 
   # Create the discrete alpha complex
-  ac <- alpha_complex(points = p, alpha = alpha)
+  ac <- alpha_complex(points = points, alpha = alpha)
   # Generate a grid of coordinates
   grid <- grid_coordinates(mins, maxs, spacings)
   # Check which simplex the grid coordinates are in
