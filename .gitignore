@@ -10,6 +10,7 @@ Debug/
 package/src-i386
 .settings
 *.dll
+*.so
 *.o
 *.bak
-
+*.tar.gz
