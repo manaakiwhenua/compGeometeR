@@ -15,11 +15,18 @@ Install `devtools` from CRAN:
 ```r
 install.packages("devtools")
 ```
-Install `compGeometeR` from GitHub:
+Install the master branch of `compGeometeR` from GitHub:
 
 ```r
-devtools::install_git("https://github.com/manaakiwhenua/compGeometeR",subdir = "package")
+devtools::install_github("https://github.com/manaakiwhenua/compGeometeR", subdir = "package")
 ```
+
+Install a different branch of `compGeometeR` from GitHub:
+
+```r
+devtools::install_github("https://github.com/manaakiwhenua/compGeometeR", subdir = "package", ref = "<your_branch_name>")
+```
+
 Please note that `devtools` may require you to install `RTools`, and to install `compGeometeR` from GitHub may require you to install `Git`.
 
 ## Dependencies
@@ -54,7 +61,7 @@ This software was developed using `R` and `C` Language. If you fork this project
 
 To learn about `R` development, please see [Chapter 2: The whole game](http://r-pkgs.org/whole-game.html) in the [R Packages](https://r-pkgs.org/) development book.  It gives a comprehensive explanation for `R` package development and uses the `devtools` package. Also, [Chapter 4: Package structure and state](http://r-pkgs.org/package-structure-state.html) gives a great explanation of how to structure your `R` package.
 
-To get started with local development you will need the following software:
+To get started with local development on Windows you will need the following software:
 
 ### Software
 
@@ -74,7 +81,7 @@ To get started with local development you will need the following software:
 
 4. Download R studio and use it to open the .Rproj
 
-5. Use Eclipse or any C editor to update the C files as needed.
+5. Use Eclipse, VS Code or any other C editor to update the C files as needed.
 
 ### Building and installing
 
@@ -83,11 +90,32 @@ The `make` file is the easier way to rebuild and install the package, this is be
 
  * `make install` (this should be run outside the project directory)
 
-To build and install using the `R` and `devtools`, you have to make sure you `make` install on your system.  Once you have follow the instruction given above to install `make`, then run the following:
+To build and install using the `R` and `devtools`, you have to make sure you that `make` is installed on your system.  Once you have follow the instruction given above to install `make`, then run the following:
 
+ * `getwd()` to check that you're in subfolder "package" and not in folder "compGeometeR" (the parent)
+ * `setwd("./package")` if you happen to be in the parent folder
  * `roxygen2::roxygenise()` to regenrate the documentation
- * `devtools::build("package")` to build
- * `devtools::install("package")` or `devtools::install("package",args = c("--no-multiarch"))` to install depending on your architecture
+ * `devtools::build()` to build
+ * `devtools::install()` or `devtools::install(args = c("--no-multiarch"))` to install depending on your architecture
+
+ You should then be able to load the package using:
+ 
+ * `library(compGeometeR)`
+
+### Reinstalling after making changes
+
+You may find that you get permission errors on Windows when reinstalling the package on top of an existing version after making changes to the code. Trying the following might help:
+
+ * Unload the package if it's loaded (untick the `compGeometeR` entry in the Packages tab if using RStudio)
+ * Remove the package (click the Remove icon for the `compGeometeR` entry in the Packages tab if using RStudio)
+ * Open the installation folder for R packages in Explorer (or in a file manager of your choice if not using Windows)
+   * The error message will tell you what it is (typically something like `C:\Users\<your_user_name>\AppData\Local\R\win-library\<r_version>\`)
+ * Check if the package folder is still there - you're done if it isn't, skip the next point
+ * If the package folder's still hanging around:
+   * Close RStudio and save the workspace
+   * Delete the `compGeometeR` folder manually
+   * Reopen RStudio
+ * Rerun `devtools::install()`
 
 ### Generating Package PDF
 
