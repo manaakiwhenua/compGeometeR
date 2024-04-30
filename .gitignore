@@ -13,5 +13,3 @@ package/src-i386
 *.so
 *.o
 *.bak
-*.tar.gz
-
