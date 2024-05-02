@@ -26,21 +26,52 @@ It is built upon and depends on the [Qhull library](http://www.qhull.org/), howe
 
 ## Installation Options<a name="InstallOptions"/>
 
-`compGeometeR` is currently verified to build, install and run on Windows. Depending on what you intend to use the package for, you may need different levels of control over how - and how often - you build, rebuild and install the package.
+`compGeometeR` is currently verified to build, install and run _on Windows only_. Depending on what you intend to use the package for, you may need different levels of control over how - and how often - you build, rebuild and install the package.
 
 `compGeometeR` is not available on CRAN. You'll need to choose one of the options below in order to use it.
 
-[Installing the package tarball from inside `RStudio` or `R`](#FromTarball)
+You will need RTools to be installed if your option includes building the `C` sources from scratch.
 
-[Installing the package from the GitHub repository inside `RStudio` or `R`](#FromGitHub)
+[Installing the binary package zip for Windows from inside `RStudio` or `R`](#BinaryZip)
+
+[Installing the source package tarball from inside `RStudio` or `R`](#FromTarball)
+
+[Installing the source package from the GitHub repository inside `RStudio` or `R`](#FromGitHub)
 
 [Checking and building the package locally in `RStudio` or `R`](#LocalBuild)
 
 [Reinstalling a local build from `RStudio` or `R` after making changes](#ReinstallLocal)
 
-### Installing the package tarball from inside `RStudio` or `R`<a name="FromTarball"/>
+### Installing the binary package zip for Windows from inside `RStudio` or `R`<a name="BinaryZip"/>
+Choose this option if you simply want to use the `R` functions from the package.
 
-Choose this option if you want to simply use the `R` functions from the package, or if any code that you add to it is also in `R` and you have an up-to-date tarball to install from.
+ * Clone the repository from https://github.com/manaakiwhenua/compGeometeR if you haven't done that already
+ 
+ * Open the `compGeometeR` project folder
+ 
+ * Check that it contains a file called `compGeometeR_<version>.zip`, where `<version>` is the current release number
+ 
+ * Open `compGeometeR.Rproj` in `RStudio`, or start `R` in that folder
+ 
+ * Verify your working directory on the `R` console using `getwd()`
+ 
+   * Set your working directory to `compGeometeR` using `setwd("<path to parent folder>/compGeometeR")` if you're in the wrong place
+   
+ * Install the binary package on Windows:
+   ```r
+   install.packages("compGeometeR_<version>.zip")
+   ``` 
+   where `<version>` is again the current release number
+ 
+You should be able to verify that the installation succeeded by loading the package using `library(compGeometeR)`.
+   
+[Installation Options](#InstallOptions)
+
+[Back to Top](#Top)
+
+### Installing the source package tarball from inside `RStudio` or `R`<a name="FromTarball"/>
+
+Choose this option if any code that you add to the package is also in `R` and you have an up-to-date tarball to install from.
 
  * Clone the repository from https://github.com/manaakiwhenua/compGeometeR if you haven't done that already
  
@@ -66,7 +97,7 @@ You should be able to verify that the installation succeeded by loading the pack
 
 [Back to Top](#Top)
 
-### Installing the package from the GitHub repository inside `RStudio`  or `R`<a name="FromGitHub"/>
+### Installing the source package from the GitHub repository inside `RStudio`  or `R`<a name="FromGitHub"/>
 
 Choose this option if you want to use the most recent, in-development version of the package, or if you want to build and install a version that comes from a git branch other than the main one.
 
@@ -158,16 +189,29 @@ Choose this option if you think you'll be making changes to any part of the `C` 
    * Run the tests
    
  * Build the package once you're happy with it:
-   ```r
-   devtools::build()
-   ```
-   This will:
    
-   * Produce a tarball in folder `compGeometeR` that replaces the old one if you've made no changes to the version number
+   * Source package:
+     ```r
+     devtools::build()
+     ```
+     This will:
    
-   * Produce a new tarball alongside the old one in folder `compGeometeR` if you've changed the version number in the `DESCRIPTION` file
+     * Produce a tarball in folder `compGeometeR` that replaces the old one if you've made no changes to the version number
+   
+     * Produce a new tarball alongside the old one in folder `compGeometeR` if you've changed the version number in the `DESCRIPTION` file
+     
+   * Binary package for Windows:
+     ```r
+     devtools::build(binary = TRUE)
+     ```
+     This will:
+   
+     * Produce a zip file in folder `compGeometeR` that replaces the old one if you've made no changes to the version number
+   
+     * Produce a new zip file alongside the old one in folder `compGeometeR` if you've changed the version number in the `DESCRIPTION` file
+   
 
-You'll be able load the newly built binary package using `library(compGeometeR)` if the build succeeded.
+You'll be able load the newly built package using `library(compGeometeR)` if there were no errors.
 
 [Installation Options](#InstallOptions)
 
