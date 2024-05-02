@@ -325,7 +325,7 @@ SEXP C_delaunayn(const SEXP p, const SEXP options, SEXP tmpdir)
   {
     if (exitcode == 1)
     {
-      error("Qhull returned non-simplicial facets -- try delaunayn with different options. exitcode", exitcode);
+      error("Qhull returned non-simplicial facets -- try delaunayn with different options. exitcode %d", exitcode);
     }
     else
     {

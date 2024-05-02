@@ -81,7 +81,7 @@ double *calculateradill(double *point0, double *voronoiVertices)
 	
 	Rprintf("num of rows");
 	snprintf(int2strbuf, int2strbufsize, "%d", row);
-	Rprintf(int2strbuf);
+	Rprintf((char *)int2strbuf);
 	
 	for (j = 0; j < row; j++)
 	{
