@@ -71,12 +71,18 @@ void print_summary(qhT *qh)
  */
 double *calculateradill(double *point0, double *voronoiVertices)
 {
-	int j, k = 0;
-	int row = nrows(point0);
-	int colD = ncols(point0);
+  int int2strbufsize = 12;
+  char int2strbuf[int2strbufsize];
+  
+  int j, k = 0;
+	int row = nrows((SEXP)point0);
+	int colD = ncols((SEXP)point0);
 	double *circumRadii = (double *)R_alloc(row, sizeof(double));
-	Rprintf("num of row");
-	Rprintf(row);
+	
+	Rprintf("num of rows");
+	snprintf(int2strbuf, int2strbufsize, "%d", row);
+	Rprintf(int2strbuf);
+	
 	for (j = 0; j < row; j++)
 	{
 		double pointSumDiff = 0.0;
@@ -84,7 +90,7 @@ double *calculateradill(double *point0, double *voronoiVertices)
 
 		for (int i = 1; i < colD; i++)
 		{
-			pointSumDiff += (double)pow((REAL(voronoiVertices)[j + row * i] - REAL(point0)[j + row * i]), 2);
+			pointSumDiff += (double)pow((REAL((SEXP)voronoiVertices)[j + row * i] - REAL((SEXP)point0)[j + row * i]), 2);
 		}
 		circumRadii[k] = sqrt(pointSumDiff);
 
