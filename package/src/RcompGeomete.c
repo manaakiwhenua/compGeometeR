@@ -79,10 +79,9 @@ double *calculateradill(double *point0, double *voronoiVertices)
 	int colD = ncols((SEXP)point0);
 	double *circumRadii = (double *)R_alloc(row, sizeof(double));
 	
-	Rprintf("num of rows");
 	snprintf(int2strbuf, int2strbufsize, "%d", row);
-	Rprintf((char *)int2strbuf);
-	
+	Rprintf("num of rows %s", int2strbuf);
+
 	for (j = 0; j < row; j++)
 	{
 		double pointSumDiff = 0.0;
