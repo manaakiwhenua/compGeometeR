@@ -142,7 +142,7 @@ As with installing from the tarball, you'll be able to verify that the installat
 
 ### Checking and building the package locally in `RStudio` or `R`<a name="LocalBuild"/>
 
-Choose this option if you think you'll be making changes to any part of the `C` code. You'll end up with a new source package tarball that replaces the one you got from the git repository.
+Choose this option if you think you'll be making changes to any part of the `C` code. You'll end up with a new source package tarball or binary zip file that replaces the one you got from the git repository.
 
  * Clone the repository from https://github.com/manaakiwhenua/compGeometeR if you haven't done that already
  
