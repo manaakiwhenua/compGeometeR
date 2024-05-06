@@ -1,5 +1,5 @@
 #' @keywords internal
-#' @useDynLib compGeometeR
+#' @useDynLib compGeometeR, .registration = TRUE
 "_PACKAGE"
 
 ## usethis namespace: start
