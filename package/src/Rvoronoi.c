@@ -92,7 +92,6 @@ SEXP C_voronoiR(const SEXP p, const SEXP options, SEXP tmpdir)
   qh_zero(qh, errfile);
 
   exitcode = qh_new_qhull(qh, dim, n, pt_array, ismalloc, flags, tmpstdout, errfile);
-  fclose(tmpstdout);
   unlink(name);
   free((char *)name);
   exitcode = setjmp(qh->errexit);

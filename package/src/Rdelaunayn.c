@@ -81,7 +81,6 @@ SEXP C_delaunayn(const SEXP p, const SEXP options, SEXP tmpdir)
   qhT *qh = (qhT *)malloc(sizeof(qhT));
   qh_zero(qh, errfile);
   exitcode = qh_new_qhull(qh, dim, n, pt_array, ismalloc, flags, tmpstdout, errfile);
-  fclose(tmpstdout);
   unlink(name);
   free((char *)name);
 
