@@ -44,7 +44,7 @@
 digital_convex_hull <- function(points=NULL, mins, maxs, spacings) {
 
   # Create the discrete convex hull
-  ch <- convex_hull(points=p)
+  ch <- convex_hull(points=points)
   # Generate a grid of coordinates
   grid <- grid_coordinates(mins, maxs, spacings)
   # Check which grid coordinates are in the convex hull

@@ -7,7 +7,7 @@ roxygen:
 	echo "if (!library(roxygen2, logical.return=TRUE)) {install.packages(\"roxygen2\", repos=\"http://star-www.st-andrews.ac.uk/cran/\"); library(roxygen2) } ; roxygenize(\"package\")" |	R --no-restore --slave
 
 package: roxygen
-	R CMD build compGeometeR
+	R CMD build package
 
 install: package
 	R CMD INSTALL --latex $(compGeometeR) 

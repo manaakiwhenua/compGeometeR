@@ -3,7 +3,7 @@
 #include <Rdefines.h>
 #include <Rinternals.h>
 
-FILE * tmpstdout;
+extern FILE * tmpstdout;
 #undef stdout
 
 

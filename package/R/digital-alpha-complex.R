@@ -36,7 +36,13 @@
 #' y <- c(35, 80, 70, 50, 60, 20)
 #' p <- data.frame(x, y)
 #' # Create digital alpha complex
-#' d_ac <- digital_alpha_complex(points = p, alpha = 20, mins=c(15,15), maxs=c(85,85), spacings=c(0.5,0.5))
+#' d_ac <- digital_alpha_complex(
+#'			points = p,
+#'			alpha = 20,
+#'			mins=c(15,15),
+#'			maxs=c(85,85),
+#'			spacings=c(0.5,0.5)
+#'	   )
 #' cols = c("lightgrey", "orange", "purple", "lightseagreen")
 #' # Unpack the digital alpha complex components
 #' d_ac_array <- d_ac[[1]]
@@ -52,7 +58,7 @@
 digital_alpha_complex <- function(points=NULL, alpha=Inf, mins, maxs, spacings) {
 
   # Create the discrete alpha complex
-  ac <- alpha_complex(points = p, alpha = alpha)
+  ac <- alpha_complex(points = points, alpha = alpha)
   # Generate a grid of coordinates
   grid <- grid_coordinates(mins, maxs, spacings)
   # Check which simplex the grid coordinates are in

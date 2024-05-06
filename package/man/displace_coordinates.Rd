@@ -12,7 +12,7 @@ represent \eqn{n} points and the \eqn{d} columns the coordinates in
 \eqn{d}-dimensional space.}
 
 \item{displace}{Vector of length \code{n} that defines the radius of the 
-{\eqn{n}-ball} within which each point will be displaced.}
+\eqn{n}-ball within which each point will be displaced.}
 }
 \value{
 Returns a \eqn{n}-by-\eqn{d} dataframe of coordinates that have been 

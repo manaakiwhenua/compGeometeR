@@ -1,18 +1,18 @@
 Package: compGeometeR
 Type: Package
-Title: Computational Geometry Algorithms
+Title: Computational Geometry Algorithms for use in R
 Version: 1.0
 Date: 2020-05-15
 Authors@R: c(
     person("O. Pascal", "Omondiagbe" , role=c("aut","cre"), email="omondiagbep@landcareresearch.co.nz"),
     person("Thomas R.", "Etherington", role=c("aut"), email="etheringtont@landcareresearch.co.nz"))
 Maintainer: O. Pascal Omondiagbe <omondiagbep@landcareresearch.co.nz>
-Description: Computational Geometry Algorithms for use in R 
-License: GPU
+Description: Package provides R bindings for the QHull library of computational geometry algorithms. 
+License: GPL (>= 3)
 Depends: R (>= 3.5.1)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.1
 Suggests: 
    testthat
 NeedsCompilation: no

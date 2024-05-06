@@ -5,10 +5,11 @@
 .cproject
 .Rbuildignore
 .project
+.vscode
 Debug/
 package/src-i386
 .settings
 *.dll
+*.so
 *.o
 *.bak
-
